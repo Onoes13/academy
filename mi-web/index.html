@@ -1,403 +1,403 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Academia DAW</title>
-<style>
-:root{--bg:#f4f3fa;--card:#fff;--tx:#1f1b2e;--mut:#6b6880;--pri:#6c4ce0;--ok:#1f9d55;--ko:#d64545;--bd:#e2e0ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15131f;--card:#201d2e;--tx:#eeecf7;--mut:#a09cb8;--pri:#9a82ff;--ok:#3ccf7e;--ko:#ff6b6b;--bd:#35314a}}
-:root[data-theme="dark"]{--bg:#15131f;--card:#201d2e;--tx:#eeecf7;--mut:#a09cb8;--pri:#9a82ff;--ok:#3ccf7e;--ko:#ff6b6b;--bd:#35314a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:560px;margin:0 auto;padding:16px}
-h1{font-size:24px;text-align:center;color:var(--pri);margin:8px 0 16px}
-h2{font-size:18px;margin:4px 0 12px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:12px}
-label{display:block;font-weight:600;margin:10px 0 6px}
-select,button{width:100%;font:inherit;padding:13px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
-button{cursor:pointer;font-weight:600}
-button.p{background:var(--pri);color:#fff;border-color:var(--pri);margin-top:14px}
-button.p:disabled{opacity:.45}
-button.s{margin-top:10px}
-.bar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;margin-bottom:12px}
-.bar div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 4px;font-size:12px;color:var(--mut)}
-.bar b{display:block;font-size:22px;color:var(--tx)}
-.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
-.acts button{padding:10px 4px;font-size:13px}
-.q{font-size:17px;font-weight:600;margin:0 0 12px;line-height:1.35}
-.opt{text-align:left;margin-bottom:8px;font-weight:500}
-.opt.ok{background:var(--ok);border-color:var(--ok);color:#fff}
-.opt.ko{background:var(--ko);border-color:var(--ko);color:#fff}
-.mut{color:var(--mut);font-size:13px}
-.wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:left}
-.hide{display:none}
-.del{width:auto;padding:4px 9px;font-size:13px;color:var(--ko)}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Academia DAW</title>
+    <style>
+        :root{--bg:#f4f3fa;--card:#fff;--tx:#1f1b2e;--mut:#6b6880;--pri:#6c4ce0;--ok:#1f9d55;--ko:#d64545;--bd:#e2e0ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+        @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15131f;--card:#201d2e;--tx:#eeecf7;--mut:#a09cb8;--pri:#9a82ff;--ok:#3ccf7e;--ko:#ff6b6b;--bd:#35314a}}
+        :root[data-theme="dark"]{--bg:#15131f;--card:#201d2e;--tx:#eeecf7;--mut:#a09cb8;--pri:#9a82ff;--ok:#3ccf7e;--ko:#ff6b6b;--bd:#35314a}
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+        main{max-width:560px;margin:0 auto;padding:16px}
+        h1{font-size:24px;text-align:center;color:var(--pri);margin:8px 0 16px}
+        h2{font-size:18px;margin:4px 0 12px}
+        .card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:12px}
+        label{display:block;font-weight:600;margin:10px 0 6px}
+        select,button{width:100%;font:inherit;padding:13px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+        button{cursor:pointer;font-weight:600}
+        button.p{background:var(--pri);color:#fff;border-color:var(--pri);margin-top:14px}
+        button.p:disabled{opacity:.45}
+        button.s{margin-top:10px}
+        .bar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;margin-bottom:12px}
+        .bar div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 4px;font-size:12px;color:var(--mut)}
+        .bar b{display:block;font-size:22px;color:var(--tx)}
+        .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+        .acts button{padding:10px 4px;font-size:13px}
+        .q{font-size:17px;font-weight:600;margin:0 0 12px;line-height:1.35}
+        .opt{text-align:left;margin-bottom:8px;font-weight:500}
+        .opt.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+        .opt.ko{background:var(--ko);border-color:var(--ko);color:#fff}
+        .mut{color:var(--mut);font-size:13px}
+        .wrap{overflow-x:auto}
+        table{width:100%;border-collapse:collapse;font-size:13px}
+        th,td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:left}
+        .hide{display:none}
+        .del{width:auto;padding:4px 9px;font-size:13px;color:var(--ko)}
+    </style>
 </head>
 <body>
 <main>
-<h1>Academia DAW</h1>
+    <h1>Academia DAW</h1>
 
-<section id="menu" class="card">
-  <h2>Configura tu Test</h2>
-  <label for="asig">Asignatura:</label>
-  <select id="asig"></select>
-  <label for="tema">Tema:</label>
-  <select id="tema" disabled><option>-- Selecciona primero la asignatura --</option></select>
-  <button class="p" id="start" disabled>Comenzar Test</button>
-  <button class="s" id="stats">📊 Ver mis Estadísticas</button>
-</section>
+    <section id="menu" class="card">
+        <h2>Configura tu Test</h2>
+        <label for="asig">Asignatura:</label>
+        <select id="asig"></select>
+        <label for="tema">Tema:</label>
+        <select id="tema" disabled><option>-- Selecciona primero la asignatura --</option></select>
+        <button class="p" id="start" disabled>Comenzar Test</button>
+        <button class="s" id="stats">📊 Ver mis Estadísticas</button>
+    </section>
 
-<section id="quiz" class="hide">
-  <div class="bar">
-    <div><b id="nota">0.0</b>Nota</div>
-    <div><b id="ac">0</b>Aciertos</div>
-    <div><b id="fa">0</b>Fallos</div>
-  </div>
-  <div class="acts">
-    <button id="salir">🏠 Salir</button>
-    <button id="term">⏹️ Terminar</button>
-    <button id="reini">🔄 Reiniciar</button>
-  </div>
-  <div class="card">
-    <p class="mut" id="prog"></p>
-    <p class="q" id="q"></p>
-    <div id="opts"></div>
-    <button class="p hide" id="next">Siguiente</button>
-  </div>
-</section>
+    <section id="quiz" class="hide">
+        <div class="bar">
+            <div><b id="nota">0.0</b>Nota</div>
+            <div><b id="ac">0</b>Aciertos</div>
+            <div><b id="fa">0</b>Fallos</div>
+        </div>
+        <div class="acts">
+            <button id="salir">🏠 Salir</button>
+            <button id="term">⏹️ Terminar</button>
+            <button id="reini">🔄 Reiniciar</button>
+        </div>
+        <div class="card">
+            <p class="mut" id="prog"></p>
+            <p class="q" id="q"></p>
+            <div id="opts"></div>
+            <button class="p hide" id="next">Siguiente</button>
+        </div>
+    </section>
 
-<section id="hist" class="hide card">
-  <h2>Tu Historial de Progreso</h2>
-  <div class="wrap">
-    <table>
-      <thead><tr><th>Fecha</th><th>Test</th><th>Resumen</th><th>Nota</th><th></th></tr></thead>
-      <tbody id="rows"></tbody>
-    </table>
-  </div>
-  <button class="s" id="back">🏠 Volver al Menú</button>
-</section>
+    <section id="hist" class="hide card">
+        <h2>Tu Historial de Progreso</h2>
+        <div class="wrap">
+            <table>
+                <thead><tr><th>Fecha</th><th>Test</th><th>Resumen</th><th>Nota</th><th></th></tr></thead>
+                <tbody id="rows"></tbody>
+            </table>
+        </div>
+        <button class="s" id="back">🏠 Volver al Menú</button>
+    </section>
 </main>
 
 <script>
-// ✏️ EDITA AQUÍ tus asignaturas, temas y preguntas.
-// Formato: pregunta, opciones y c = índice (empezando en 0) de la correcta.
-const DATA = {
-  "Programación": {
-    "Tema 1 – Java básico": [
-      {q:"¿Qué palabra clave declara una constante en Java?", o:["const","final","static","let"], c:1},
-      {q:"¿Cuál es el tipo de dato para números decimales de doble precisión?", o:["float","int","double","long"], c:2},
-      {q:"¿Cómo se llama el método principal de una aplicación Java?", o:["start","run","main","init"], c:2}
-    ]
-  },
-  "Bases de Datos": {
-    "Tema 1 – SQL": [
-      {q:"¿Qué sentencia se usa para consultar datos?", o:["INSERT","SELECT","UPDATE","DROP"], c:1},
-      {q:"¿Qué cláusula filtra filas?", o:["WHERE","ORDER BY","GROUP BY","JOIN"], c:0},
-      {q:"¿Qué restricción identifica de forma única cada fila?", o:["FOREIGN KEY","UNIQUE NULL","PRIMARY KEY","CHECK"], c:2}
-    ]
-  },
-  "Lenguajes de Marcas": {
-    "Tema 1 – HTML": [
-      {q:"¿Qué etiqueta define un enlace?", o:["<link>","<a>","<href>","<url>"], c:1},
-      {q:"¿Qué etiqueta es la de mayor nivel de encabezado?", o:["<h6>","<head>","<h1>","<header>"], c:2}
-    ]
-  },
-  "Desarrollo Web en Entorno Cliente": {
-    "Tema 1": [
-      {q:"¿Qué lenguaje de marcado se utiliza para estructurar el contenido de una página web?", o:["JSON", "JavaScript", "HTML", "CSS"], c:2},
-      {q:"¿Qué diferencia básica existe entre HTML y JavaScript?", o:["HTML estructura contenido y JavaScript añade comportamiento.", "JavaScript estructura contenido y HTML ejecuta lógica.", "Ambos son hojas de estilo.", "Ambos son formatos de datos."], c:0},
-      {q:"¿Qué tecnología controla principalmente la presentación visual de una página web?", o:["JSON", "Tcl", "CSS", "HTML"], c:2},
-      {q:"¿Qué diferencia básica existe entre CSS y JavaScript?", o:["CSS define presentación y JavaScript comportamiento.", "CSS gestiona la base de datos y JavaScript el servidor.", "Ambos son formatos de intercambio.", "Ambos son lenguajes de marcado."], c:0},
-      {q:"¿Qué combinación permite crear una página estructurada, con estilos e interacción del lado cliente?", o:["Java, PHP y DNS", "SQL, FTP y SMTP", "HTML, CSS y JavaScript", "JSON, XML y FTP"], c:2},
-      {q:"¿Qué objetivo persigue HTML5 en el desarrollo de aplicaciones web modernas?", o:["Eliminar CSS.", "Mejorar las capacidades y la experiencia web, incluido el uso móvil.", "Sustituir todos los lenguajes de programación.", "Eliminar JavaScript."], c:1},
-      {q:"¿Qué lenguaje se utiliza para crear programas que realizan acciones dentro de una página web?", o:["JavaScript", "Python", "Ruby", "PHP"], c:0},
-      {q:"¿Qué ventaja ofrece colocar JavaScript en un archivo externo?", o:["Impide compartir código entre páginas.", "Obliga a duplicar el script.", "Elimina la necesidad de HTML.", "Facilita la reutilización y mantiene el HTML más limpio."], c:3},
-      {q:"¿Qué lenguaje de scripting se ha utilizado para desarrollar prototipos y aplicaciones de script?", o:["SQL", "CSS", "Tcl", "HTML"], c:2},
-      {q:"¿Qué característica distingue a los lenguajes de scripting frente a los compilados?", o:["Generan siempre código máquina antes de ejecutarse.", "Se ejecutan mediante un intérprete.", "Solo pueden ejecutarse en servidores.", "No pueden interactuar con páginas web."], c:1},
-      {q:"¿Qué tecnología permite actualizar partes de una página sin recargarla completamente?", o:["HTML5", "AJAX", "XML", "CSS"], c:1},
-      {q:"¿Qué ventaja aporta AJAX a la experiencia del usuario?", o:["Elimina la comunicación con el servidor.", "Sustituye a HTML.", "Obliga a recargar toda la página.", "Reduce las recargas completas al actualizar partes de la página."], c:3},
-      {q:"¿Qué formato de datos es habitual para intercambiar información entre cliente y servidor?", o:["XHTML", "JSON", "CSS", "Tcl"], c:1},
-      {q:"¿Qué modelo divide el trabajo entre un cliente que solicita servicios y un servidor que responde?", o:["Cliente-servidor", "Modelo sin red", "Peer-to-peer exclusivamente", "Monolítico puro"], c:0},
-      {q:"¿Qué componente inicia normalmente una petición en el modelo cliente-servidor?", o:["El cliente", "El servidor", "La base de datos", "El depurador"], c:0},
-      {q:"¿Qué componente procesa las solicitudes y devuelve resultados en el modelo cliente-servidor?", o:["El cliente", "El navegador exclusivamente", "El servidor", "El editor"], c:2},
-      {q:"¿Qué ventaja aporta JSON en aplicaciones cliente-servidor?", o:["Sustituye la presentación CSS.", "Representa datos de forma ligera para intercambiarlos.", "Ejecuta código en el navegador.", "Compila JavaScript."], c:1},
-      {q:"¿Qué cambio favoreció la expansión del modelo cliente-servidor con la llegada de los PC?", o:["La distribución de carga entre cliente y servidor.", "El abandono de las redes.", "La centralización total en mainframes.", "La desaparición de interfaces gráficas."], c:0},
-      {q:"¿Qué arquitectura permite acceder a información desde clientes de distintas plataformas?", o:["Solo peer-to-peer", "Monolítica", "Sin red", "Cliente-servidor"], c:3},
-      {q:"¿Qué característica de Vue.js permite incorporarlo gradualmente a un proyecto?", o:["Su enfoque progresivo.", "El uso exclusivo de XML.", "La ejecución solo en servidor.", "La ausencia de componentes."], c:0},
-      {q:"¿Qué framework se describe habitualmente como progresivo porque puede incorporarse de forma gradual?", o:["XHTML", "Tcl", "Flash", "Vue.js"], c:3},
-      {q:"¿Qué ventaja principal ofrecía jQuery en muchos desarrollos web?", o:["Reemplazar por completo JavaScript.", "Eliminar la necesidad de programación.", "Crear bases de datos.", "Simplificar el código y las diferencias de compatibilidad entre navegadores."], c:3},
-      {q:"¿Qué problema intentaban resolver librerías como jQuery?", o:["La falta de bases de datos.", "La compresión de imágenes.", "Las diferencias de comportamiento entre navegadores.", "La ausencia de servidores web."], c:2},
-      {q:"¿Qué framework de interfaz utiliza un DOM virtual para actualizar la interfaz eficientemente?", o:["Flash", "React", "Tcl", "jQuery"], c:1},
-      {q:"¿Qué característica de React contribuye a reutilizar partes de una interfaz?", o:["Los archivos CSS externos exclusivamente.", "Los componentes.", "Los registros DNS.", "Las sesiones FTP."], c:1},
-      {q:"¿Qué tecnología permite manipular dinámicamente elementos de una página mediante JavaScript?", o:["SQL", "FTP", "El DOM", "SMTP"], c:2},
-      {q:"¿Qué objetivo tiene un depurador de JavaScript?", o:["Gestionar versiones del proyecto.", "Localizar y corregir errores del código.", "Crear bases de datos.", "Diseñar hojas de estilo."], c:1},
-      {q:"¿Qué herramienta permite detectar y analizar errores durante la ejecución del código?", o:["Editor de texto", "Depurador", "Generador de estilos", "Controlador de versiones"], c:1},
-      {q:"¿Qué tipo de herramienta registra cambios y facilita trabajar con distintas versiones del código?", o:["Control de versiones.", "Generador de estilos.", "Depurador.", "Editor de texto."], c:0},
-      {q:"¿Qué ventaja aporta un sistema de control de versiones en un proyecto web?", o:["Ejecuta automáticamente JavaScript.", "Elimina la necesidad de código.", "Facilita la colaboración y el seguimiento de cambios.", "Sustituye el depurador."], c:2},
-      {q:"¿Qué debe hacer un navegador si un script JavaScript tarda demasiado y consume recursos?", o:["Borrar la página.", "Cerrar siempre el sistema operativo.", "Avisar al usuario y permitir detenerlo.", "Convertir el script en CSS."], c:2},
-      {q:"¿Qué limitación de seguridad impide normalmente que JavaScript acceda libremente a los archivos del equipo?", o:["La ausencia de funciones.", "El uso de CSS.", "La falta de variables.", "El aislamiento impuesto por el navegador."], c:3},
-      {q:"¿Qué tecnología obsoleta compitió con JavaScript para añadir interactividad en páginas web?", o:["Flash", "AJAX", "CSS", "JSON"], c:0},
-      {q:"¿Qué caracteriza un desarrollo web del lado cliente bien organizado?", o:["Mezcla todo el código sin criterio.", "Evita herramientas de depuración.", "Separa estructura, presentación y comportamiento usando tecnologías adecuadas.", "No utiliza control de versiones."], c:2},
-      {q:"¿Qué aspecto debe adaptarse en aplicaciones utilizadas desde dispositivos móviles?", o:["Presentación y controles.", "Solo el nombre del dominio.", "Solo la base de datos.", "Únicamente el servidor."], c:0},
-      {q:"¿Qué tecnología se encarga principalmente de la estructura de una interfaz Android tradicional?", o:["JavaScript", "HTML", "CSS", "XML"], c:3}
-    ],
-    "Tema 2": [
-      {q:"¿Qué función permite conocer el tipo de un valor en JavaScript?", o:["typeof", "toString", "parseFloat", "parseInt"], c:0},
-      {q:"¿Qué resultado produce 5 + \"5\" en JavaScript?", o:["\"55\"", "55", "10", "\"10\""], c:0},
-      {q:"¿Qué tipo de valor es \"Hola\" en JavaScript?", o:["Number", "String", "Object obligatoriamente", "Boolean"], c:1},
-      {q:"¿Qué palabra se utiliza para representar un valor lógico falso?", o:["no", "false", "off", "0 obligatoriamente"], c:1},
-      {q:"¿Qué estructura de control permite escoger entre varias ramas según condiciones?", o:["if", "parseFloat", "var", "typeof"], c:0},
-      {q:"¿Qué función convierte una cadena en un número entero?", o:["typeof()", "parseFloat()", "toString()", "parseInt()"], c:3},
-      {q:"¿Qué palabra se utiliza para representar un valor lógico verdadero?", o:["yes", "on", "1 obligatoriamente", "true"], c:3},
-      {q:"¿Qué tipo de dato representa un conjunto de propiedades como nombre y edad?", o:["Object", "Number", "Boolean", "String"], c:0},
-      {q:"¿Qué operador se utiliza para concatenar cadenas en JavaScript?", o:["&&", "|", "+", "&"], c:2},
-      {q:"¿Qué significa que JavaScript sea sensible a mayúsculas y minúsculas?", o:["Solo acepta minúsculas", "Ignora diferencias entre mayúsculas y minúsculas", "Solo acepta mayúsculas", "Distingue entre nombres escritos con diferente capitalización"], c:3},
-      {q:"¿Qué operador lógico representa la conjunción Y?", o:["||", "=", "&&", "!"], c:2},
-      {q:"¿Qué hace break dentro de un bucle?", o:["Declara una variable", "Salta siempre a la siguiente iteración", "Reinicia el bucle", "Finaliza el bucle actual"], c:3},
-      {q:"¿Qué operador realiza una comparación de igualdad con conversión de tipos?", o:["==", "===", "!==", "="], c:0},
-      {q:"¿Qué palabra clave tradicional permite declarar variables en JavaScript?", o:["type", "define", "var", "global"], c:2},
-      {q:"¿Qué operador incrementa una variable en una unidad?", o:["+=", "--", "++", "="], c:2},
-      {q:"¿Qué función está orientada a mostrar contenido directamente en el documento?", o:["document.write()", "parseInt()", "console.log()", "prompt()"], c:0},
-      {q:"¿Qué estructura de control se usa para repetir una secuencia un número controlado de veces?", o:["switch exclusivamente", "typeof", "if", "for"], c:3},
-      {q:"¿Cómo pueden declararse varias variables en una misma sentencia?", o:["Usando un array obligatoriamente", "Separándolas por dos puntos", "Separándolas por comas", "No es posible"], c:2},
-      {q:"¿Qué ventaja aporta la comparación estricta?", o:["Asigna el valor de la derecha", "Compara valor y tipo sin conversión automática", "Solo funciona con números", "Convierte siempre los operandos a texto"], c:1},
-      {q:"¿Qué variable solo es accesible dentro del ámbito donde se declara?", o:["Una variable local", "Una variable global", "Una constante del sistema", "Una propiedad del objeto global"], c:0},
-      {q:"¿Qué devuelve parseFloat(\"3.14\")?", o:["\"3.14\"", "3.14", "3", "false"], c:1},
-      {q:"¿Qué tipo devuelve typeof para un array en JavaScript?", o:["\"object\"", "\"collection\"", "\"array\"", "\"list\""], c:0},
-      {q:"¿Qué sentencia repite un bloque mientras una condición sea verdadera?", o:["switch", "break", "if", "while"], c:3},
-      {q:"¿Qué caracteriza el uso correcto de variables y operadores?", o:["Usar siempre variables globales", "Elegir tipos, ámbito y operadores adecuados a la operación", "Convertir todo a texto", "Evitar comparaciones estrictas"], c:1},
-      {q:"¿Qué valor especial representa ausencia intencionada de valor?", o:["NaN", "null", "undefined exclusivamente", "0"], c:1},
-      {q:"¿Qué valor devuelve typeof null en JavaScript?", o:["\"undefined\"", "\"null\"", "\"object\"", "\"boolean\""], c:2},
-      {q:"¿Qué función convierte una cadena en un número decimal?", o:["toString()", "parseFloat()", "parseInt()", "typeof()"], c:1},
-      {q:"¿Qué tipo de estructura representa una colección ordenada accesible por índice?", o:["String", "Number", "Array", "Boolean"], c:2},
-      {q:"¿Qué método permite convertir un número en cadena?", o:["parseInt()", "typeof()", "parseFloat()", "toString()"], c:3},
-      {q:"¿Qué operador realiza una comparación estricta de igualdad?", o:["===", "==", "!=", "="], c:0},
-      {q:"¿Qué tipo de valor es 42 en JavaScript?", o:["Number", "Boolean", "String", "Array"], c:0},
-      {q:"¿Qué operador realiza desplazamiento a la derecha sin signo?", o:[">>", "^", ">>>", "<<"], c:2},
-      {q:"¿Qué operador comprueba desigualdad estricta?", o:["===", "=", "!==", "!="], c:2},
-      {q:"¿Qué operador lógico representa la disyunción O?", o:["||", "=", "!", "&&"], c:0},
-      {q:"¿Qué operador asigna un valor a una variable?", o:["==", "=", "!=", "==="], c:1}
-    ],
-    "Tema 3": [
-      {q:"¿Qué propiedad permite conocer qué elemento está enfocado antes de operar sobre él?", o:["document.URL", "window.screenX", "document.activeElement", "window.length"], c:2},
-      {q:"¿Qué método de document permite escribir contenido en el documento?", o:["write()", "alert()", "open()", "stop()"], c:0},
-      {q:"¿Qué objeto representa la ventana del navegador?", o:["document", "navigator", "window", "screen"], c:2},
-      {q:"¿Qué objeto permite trabajar con el historial de navegación?", o:["location", "history", "navigator", "document"], c:1},
-      {q:"¿Qué propiedad de document permite acceder a los enlaces del documento?", o:["links", "forms", "images", "scripts"], c:0},
-      {q:"¿Qué propiedad permite conocer la dirección completa del documento cargado?", o:["location", "document.URL", "navigator.appName", "window.href"], c:1},
-      {q:"¿Qué método es apropiado para pedir una confirmación binaria al usuario?", o:["window.alert()", "window.prompt()", "window.confirm()", "window.open()"], c:2},
-      {q:"¿Qué método solicita un valor de entrada mediante un cuadro de texto al usuario?", o:["alert()", "confirm()", "prompt()", "open()"], c:2},
-      {q:"¿Qué método de window desplaza el documento una distancia relativa?", o:["scrollTo()", "scrollBy()", "resizeTo()", "moveTo()"], c:1},
-      {q:"¿Qué propiedad de window representa la ubicación actual del documento?", o:["screenX", "length", "location", "navigator"], c:2},
-      {q:"¿Qué propiedad de document devuelve la URL completa del documento?", o:["URL", "body", "forms", "location exclusivamente de document"], c:0},
-      {q:"¿Qué método de window detiene la carga de la ventana?", o:["focus()", "alert()", "stop()", "open()"], c:2},
-      {q:"¿Qué método de window muestra un mensaje con botones Aceptar y Cancelar?", o:["alert()", "confirm()", "prompt()", "stop()"], c:1},
-      {q:"¿Qué mecanismo permite guardar pares clave-valor sin fecha de expiración en el navegador?", o:["sessionStorage", "persistentFrame", "cookieStorage", "localStorage"], c:3},
-      {q:"¿Qué método es apropiado para escribir contenido HTML directamente durante la carga del documento?", o:["window.confirm()", "window.open()", "document.write()", "navigator.write()"], c:2},
-      {q:"¿Qué método de window desplaza el documento a unas coordenadas?", o:["resizeTo()", "stop()", "scrollTo()", "open()"], c:2},
-      {q:"¿Qué caracteriza un uso correcto de objetos del navegador?", o:["Usar navigator para escribir HTML", "Usar localStorage para abrir ventanas", "Elegir window, document y almacenamiento según la tarea concreta", "Usar alert() para modificar el DOM"], c:2},
-      {q:"¿Qué mecanismo permite guardar datos durante una sesión del navegador?", o:["alert()", "sessionStorage", "document.write()", "localStorage exclusivamente permanente"], c:1},
-      {q:"¿Qué propiedad de document devuelve el elemento que tiene actualmente el foco?", o:["body", "activeElement", "forms", "URL"], c:1},
-      {q:"¿Qué método solicita actualizar una animación antes del siguiente repintado?", o:["requestAnimationFrame()", "alert()", "document.write()", "setInterval() exclusivamente"], c:0},
-      {q:"¿Qué método de document crea un nodo de texto?", o:["newTextNode()", "createTextNode()", "writeText()", "createElementText()"], c:1},
-      {q:"¿Qué concepto de POO permite que una clase derive de otra?", o:["Encapsulación", "Composición exclusivamente", "Instanciación", "Herencia"], c:3},
-      {q:"¿Qué técnica antigua se utilizaba para almacenar datos o ejecutar funciones de forma invisible?", o:["Clases abstractas", "Frames ocultos", "Arrays asociativos", "DOM virtual"], c:1},
-      {q:"¿Qué propiedad de window devuelve el objeto Navigator?", o:["navigator", "history", "document", "location"], c:0},
-      {q:"¿Qué método registra un manejador de eventos en document?", o:["bindEvent()", "addEventListener()", "attachEvent() exclusivamente", "registerHandler()"], c:1},
-      {q:"¿Qué palabra clave se utiliza para crear una instancia a partir de una clase?", o:["instantiate", "create", "new", "objectify"], c:2},
-      {q:"¿Qué función cumple el polimorfismo?", o:["Cambiar el tamaño de una ventana", "Crear nodos de texto", "Guardar pares clave-valor", "Permitir comportamiento diferente mediante una interfaz o nombre común"], c:3},
-      {q:"¿Qué relación existe entre una clase y un objeto?", o:["El objeto define y la clase es una URL", "La clase define y el objeto es una instancia concreta", "Son conceptos sin relación", "La clase solo existe en HTML"], c:1},
-      {q:"¿Qué propiedad de window devuelve la altura exterior de la ventana?", o:["outerHeight", "length", "innerWidth", "screenX"], c:0},
-      {q:"¿Qué propiedad de window devuelve la coordenada horizontal de la ventana respecto a la pantalla?", o:["location", "length", "outerHeight", "screenX"], c:3},
-      {q:"¿Qué propiedad de document devuelve el elemento body?", o:["head", "URL", "forms", "body"], c:3},
-      {q:"¿Qué almacenamiento del navegador es persistente entre sesiones hasta que se elimina?", o:["forms", "localStorage", "sessionStorage", "activeElement"], c:1},
-      {q:"¿Qué significa instanciar un objeto?", o:["Ocultar propiedades", "Heredar una clase", "Crear un ejemplar de una clase", "Definir una clase"], c:2},
-      {q:"¿Qué concepto permite métodos con el mismo nombre y comportamiento adaptado?", o:["Encapsulación", "Instanciación", "Serialización", "Polimorfismo"], c:3},
-      {q:"¿Qué método puede utilizarse para crear contenido textual como nodo antes de insertarlo en el DOM?", o:["document.createTextNode()", "window.stop()", "window.open()", "window.alert()"], c:0},
-      {q:"¿Qué objeto proporciona información sobre el navegador?", o:["navigator", "location", "document", "localStorage"], c:0},
-      {q:"¿Qué objeto permite trabajar con la URL y navegación de la ventana?", o:["forms", "location", "activeElement", "document"], c:1},
-      {q:"¿Qué colección de document permite acceder a los formularios del documento?", o:["links exclusivamente", "styles", "forms", "frames"], c:2},
-      {q:"¿Qué método es apropiado para mostrar una advertencia simple al usuario?", o:["document.createTextNode()", "window.resizeTo()", "window.alert()", "window.confirm()"], c:2},
-      {q:"¿Qué función cumple la herencia en POO?", o:["Reutilizar y especializar características de una clase base", "Guardar datos en localStorage", "Crear nodos DOM", "Abrir ventanas"], c:0}
-    ]
-  },
-  "Despliegue de aplicaciones web": {
-    "Tema 1": [
-      {q:"¿Qué componente ejecuta lógica empresarial del lado servidor?", o:["El resolver DNS", "El cliente de correo", "El navegador", "El servidor de aplicaciones"], c:3},
-      {q:"¿Qué ventaja puede aportar un clúster?", o:["Impedir el reparto de carga", "Reducir siempre el número de servidores", "Mayor capacidad y disponibilidad del servicio", "Eliminar la necesidad de red"], c:2},
-      {q:"¿Qué servidor de aplicaciones libre está relacionado con tecnologías Java empresariales?", o:["WildFly", "IIS exclusivamente", "WordPress", "FileZilla"], c:0},
-      {q:"¿Qué servidor web se utiliza habitualmente en plataformas Microsoft .NET?", o:["PostgreSQL", "WordPress", "Apache Tomcat exclusivamente", "IIS"], c:3},
-      {q:"¿Qué componente sirve páginas y recursos HTTP al navegador?", o:["El servidor web", "El servidor LDAP", "El cliente FTP", "El servidor DNS"], c:0},
-      {q:"¿Qué ventaja caracteriza a las plataformas de software libre?", o:["Solo funcionan en servidores propietarios", "Obligan a usar un único proveedor", "Impiden acceder al código fuente", "Permiten modificar y redistribuir el software según su licencia"], c:3},
-      {q:"¿Qué es un servidor de aplicaciones web?", o:["Un editor de código", "Un sistema de nombres", "Un software que ejecuta lógica de aplicaciones y ofrece servicios a los clientes", "Un programa dedicado solo a almacenar imágenes"], c:2},
-      {q:"¿Qué ventaja suele aportar una plataforma libre?", o:["Dependencia total de un único fabricante", "Uso exclusivo en una arquitectura concreta", "Mayor libertad para adaptar el software", "Prohibición de modificar el código"], c:2},
-      {q:"¿Qué característica facilita el mantenimiento y control de varios servidores?", o:["La duplicación manual de datos", "Una arquitectura bien estructurada y administrable", "La ausencia de documentación", "La eliminación de capas"], c:1},
-      {q:"¿Qué componente del modelo de tres capas gestiona el almacenamiento de información?", o:["La capa visual", "La capa de presentación", "La capa de navegación", "La capa de datos"], c:3},
-      {q:"¿Qué parte del modelo de tres capas se aproxima al modelo de MVC?", o:["La capa de presentación exclusivamente", "El sistema DNS", "La capa de datos y lógica asociada al dominio", "El servidor web"], c:2},
-      {q:"¿Qué solución permite aumentar rápidamente capacidad añadiendo nodos similares?", o:["La gestión de sesión", "La compresión de recursos", "La escalabilidad vertical exclusivamente", "La escalabilidad horizontal"], c:3},
-      {q:"¿Qué componente del modelo de tres capas contiene la lógica de negocio?", o:["La capa física", "La capa DNS", "La capa de presentación", "La capa de aplicación"], c:3},
-      {q:"¿Qué función cumple la capa de presentación?", o:["Administrar certificados", "Recibir acciones del usuario y mostrar resultados", "Gestionar físicamente la base de datos", "Resolver nombres de dominio"], c:1},
-      {q:"¿Qué plataforma libre es conocida por la gestión de blogs y sitios web?", o:["IIS", "Tomcat Manager", "WordPress", "Active Directory"], c:2},
-      {q:"¿Qué modelo simple puede ser suficiente para servir páginas web estáticas?", o:["Tres capas obligatoriamente", "Arquitectura distribuida obligatoria", "Cliente-servidor", "Clúster activo-activo"], c:2},
-      {q:"¿Qué característica permite adaptar una aplicación a diferentes arquitecturas físicas?", o:["La flexibilidad de la arquitectura", "La compresión HTTP", "La caché del navegador", "La firma digital"], c:0},
-      {q:"¿Qué servidor web es uno de los más utilizados en entornos de software libre?", o:["Microsoft Access", "Apache HTTP Server", "PostgreSQL", "Tomcat Manager"], c:1},
-      {q:"¿Qué desventaja puede tener una plataforma propietaria?", o:["Ausencia de herramientas", "Falta obligatoria de documentación", "Imposibilidad de recibir soporte", "Dependencia del proveedor y condiciones de licencia"], c:3},
-      {q:"¿Qué relación existe entre el modelo de tres capas y MVC?", o:["MVC elimina la capa de datos", "Ambos separan responsabilidades de presentación, lógica y datos", "Son exactamente el mismo patrón en cualquier caso", "El modelo de tres capas no separa responsabilidades"], c:1},
-      {q:"¿Qué es un clúster de servidores?", o:["Un navegador con varias pestañas", "Una base de datos con varias tablas", "Un conjunto de servidores que colaboran para ofrecer un servicio", "Un único servidor con varios usuarios"], c:2},
-      {q:"¿Qué elemento es fundamental para indicar cómo se despliega una aplicación Java EE?", o:["El descriptor de despliegue", "El archivo de audio", "El archivo hosts", "El registro MX"], c:0},
-      {q:"¿Qué función cumple la capa de datos?", o:["Generar iconos", "Resolver DNS", "Gestionar únicamente formularios", "Acceder y mantener la información persistente"], c:3},
-      {q:"¿Qué ventaja aporta separar una aplicación en capas?", o:["Impide escalar", "Facilita mantenimiento, evolución y reparto de responsabilidades", "Elimina la reutilización", "Obliga a duplicar código"], c:1},
-      {q:"¿Qué mecanismo permite conservar información asociada a un usuario entre peticiones?", o:["La resolución DNS", "La gestión de sesión", "El registro MX", "La compresión GZIP"], c:1},
-      {q:"¿Qué debe valorar una organización al elegir una plataforma web?", o:["Solo el logotipo del producto", "Únicamente el lenguaje visual", "Coste, soporte, flexibilidad, requisitos y mantenimiento", "Solo el número de páginas"], c:2},
-      {q:"¿Qué ventaja suelen ofrecer las plataformas propietarias?", o:["Redistribución sin condiciones", "Ausencia total de licencias", "Acceso libre obligatorio al código fuente", "Soporte comercial y herramientas integradas del fabricante"], c:3},
-      {q:"¿Qué tipo de escalabilidad consiste en aumentar recursos de una máquina existente?", o:["Escalabilidad horizontal", "Escalabilidad distribuida", "Escalabilidad de presentación", "Escalabilidad vertical"], c:3},
-      {q:"¿Qué requisito es importante en una arquitectura web con varios servidores?", o:["Coordinar sesiones y datos compartidos", "Usar una única conexión para todos", "Evitar mecanismos de balanceo", "Eliminar toda persistencia"], c:0},
-      {q:"¿Qué solución permite aumentar capacidad añadiendo CPU o RAM a un servidor?", o:["La escalabilidad vertical", "El clustering DNS", "La escalabilidad horizontal", "La caché de identidad"], c:0},
-      {q:"¿Qué es un descriptor de despliegue en Java EE?", o:["Un archivo que define cómo debe configurarse o desplegarse una aplicación", "Un archivo de imagen", "Un certificado digital", "Un registro DNS"], c:0},
-      {q:"¿Qué tipo de escalabilidad consiste en añadir más máquinas al sistema?", o:["Escalabilidad lógica", "Escalabilidad horizontal", "Escalabilidad de sesión", "Escalabilidad vertical"], c:1},
-      {q:"¿Qué tipo de páginas se manejan con facilidad mediante un modelo cliente-servidor sencillo?", o:["Servicios de directorio", "Aplicaciones empresariales complejas exclusivamente", "Sistemas distribuidos obligatoriamente", "Páginas estáticas"], c:3},
-      {q:"¿Qué característica permite ampliar la capacidad de una aplicación sin sustituir toda la arquitectura?", o:["La escalabilidad", "La serialización", "La compresión", "La autenticación"], c:0},
-      {q:"¿Qué función cumple la capa de negocio?", o:["Resolver direcciones IP", "Aplicar las reglas y procesos de la aplicación", "Transferir archivos", "Dibujar exclusivamente la interfaz"], c:1},
-      {q:"¿Qué componente del modelo de tres capas se encarga de mostrar la información al usuario?", o:["El servidor DNS", "La capa de persistencia exclusivamente", "La capa de presentación", "La capa de datos"], c:2},
-      {q:"¿Qué conjunto de tecnologías agrupa Apache, MariaDB o MySQL, Perl y PHP?", o:["Una plataforma web libre tipo XAMPP", "Un sistema de directorio", "Un servicio DNS", "Un servidor FTP exclusivamente"], c:0},
-      {q:"¿Qué permite una caché de identidad o sesión?", o:["Crear certificados", "Cambiar el sistema operativo", "Mantener información del usuario para reutilizarla durante su interacción", "Transferir archivos por FTP"], c:2},
-      {q:"¿Qué debe buscarse al diseñar una arquitectura web escalable?", o:["Mantener todos los usuarios en una sola sesión", "Poder aumentar capacidad manteniendo el servicio y la organización del sistema", "Evitar añadir recursos", "Eliminar la separación de capas"], c:1},
-      {q:"¿Qué caracteriza una arquitectura web bien diseñada?", o:["Depende de una única tecnología sin alternativas", "Mezcla presentación, negocio y datos sin estructura", "Separa responsabilidades y permite mantenimiento, adaptación y crecimiento", "Impide distribuir carga"], c:2},
-      {q:"Una empresa prevé un fuerte aumento de usuarios en su aplicación web. Necesita ampliar la capacidad del sistema mediante una solución transparente para la programación de la aplicación, aunque eso suponga una adaptación más lenta. ¿Qué actuación se ajusta mejor a este requisito?", o:["Aplicar escalabilidad vertical, añadiendo recursos a la máquina existente o creando una máquina virtual a partir de varias máquinas físicas.", "Aplicar componentización, separando en servicios independientes el envío de páginas web y las tareas de mantenimiento y control de los servidores.", "Aplicar portabilidad, de forma que la adaptación de la aplicación al nuevo entorno de despliegue se limite a cambios de configuración.", "Aplicar escalabilidad horizontal, añadiendo máquinas físicas iguales a las existentes y repartiendo entre ellas las peticiones de los usuarios."], c:0},
-      {q:"¿Qué capa del modelo de tres capas equivale al Modelo del patrón MVC?", o:["Servidor de aplicaciones", "Servidor de base de datos", "Servidor web", "Cliente o capa de presentación"], c:1}
-    ]
-  },
-  "FOL": {
-    "Tema 1": [
-      {q:"¿Qué aspecto es crucial al adaptar un currículum al sector objetivo?", o:["Usar un diseño gráfico llamativo", "Incluir todas las experiencias laborales", "Mantener el currículum en un solo idioma", "Uso de palabras clave específicas del sector"], c:3},
-      {q:"¿Qué red social es ideal para compartir logros profesionales y participar en debates del sector?", o:["Instagram", "Snapchat", "TikTok", "LinkedIn"], c:3},
-      {q:"¿Qué técnica de selección permite observar el comportamiento de los candidatos en situaciones simuladas?", o:["Entrevistas de salida", "Pruebas de conocimiento", "Entrevistas técnicas", "Dinámicas de grupo"], c:3},
-      {q:"En el sector público, ¿qué aspecto de los procesos de selección busca asegurar la transparencia, igualdad y mérito, minimizando la posibilidad de favoritismos?", o:["Regulación estricta", "Flexibilidad", "Herramientas de selección", "Duración del proceso"], c:0},
-      {q:"¿Qué tipo de entrevista sigue un formato y guion predefinidos?", o:["Entrevista de salida", "Entrevista por competencias", "Entrevista estructurada", "Entrevista semiestructurada"], c:2},
-      {q:"¿Qué tipo de contenido en YouTube puede potenciar la marca personal de un profesional?", o:["Fotos de eventos sociales", "Memes y vídeos humorísticos", "Vídeos de viajes personales", "Tutoriales y presentaciones"], c:3},
-      {q:"¿Qué ejemplo de marca personal exitosa se basa en la capacidad de revolucionar industrias?", o:["Elon Musk", "Sheryl Sandberg", "Mark Zuckerberg", "Oprah Winfrey"], c:0},
-      {q:"¿Qué estrategia es esencial para construir una marca personal sólida?", o:["Imitar marcas personales de otros", "Autoexploración y declaración de misión personal", "Centrarse solo en habilidades técnicas", "Evitar el uso de redes sociales"], c:1},
-      {q:"¿Qué tipo de entrevista permite explorar más a fondo las respuestas de los candidatos mediante preguntas adicionales?", o:["Entrevista de evaluación de desempeño", "Entrevista semiestructurada", "Entrevista estructurada", "Entrevista por competencias"], c:1},
-      {q:"¿Qué técnica de selección se utiliza para evaluar tanto conocimientos generales como específicos de los candidatos?", o:["Entrevistas de salida", "Dinámicas de grupo", "Pruebas de conocimiento", "Assessment centers"], c:2},
-      {q:"¿Cuál es una de las principales ventajas de utilizar assessment centers en la selección de personal?", o:["Simplificar el proceso de selección", "Reducir costos de contratación", "Aumentar la cantidad de candidatos", "Evaluar múltiples competencias en un entorno simulado"], c:3},
-      {q:"¿Qué es fundamental para gestionar la huella digital en favor de la empleabilidad?", o:["Mantener perfiles profesionales actualizados", "Evitar el uso de redes sociales", "Publicar contenido personal sin restricciones", "Compartir opiniones políticas"], c:0}
-    ],
-    "Tema 2": [
-      {q:"¿Qué herramienta digital permite un análisis preciso de la distribución del tiempo de trabajo, identificando hábitos ineficientes y mejorando la planificación futura?", o:["Aplicaciones de seguimiento del tiempo", "Calendarios digitales", "Software de gestión de proyectos", "Trello"], c:0},
-      {q:"¿Qué herramienta de autoevaluación permite identificar fortalezas y áreas de mejora mediante retroalimentación de diversas fuentes (superiores, compañeros, subordinados y autoevaluación)?", o:["Dinámicas de grupo", "Feedback 360", "Pruebas psicométricas", "Assessment centers"], c:1},
-      {q:"¿Qué técnica de autorregulación emocional implica cambiar la percepción de una situación estresante para verla desde un ángulo más positivo, facilitando la gestión del estrés?", o:["Mindfulness", "Técnica Pomodoro", "Visualización positiva", "Reencuadre cognitivo"], c:3},
-      {q:"¿Qué método de organización visual utiliza tarjetas para gestionar el flujo de trabajo, mostrando las etapas del proceso y permitiendo identificar cuellos de botella?", o:["GTD", "Kanban", "Diagrama de Gantt", "Matriz de Eisenhower"], c:1},
-      {q:"¿Qué competencia personal es crucial para enfrentar y superar adversidades?", o:["Iniciativa", "Empatía", "Resiliencia", "Autorregulación"], c:2},
-      {q:"¿Cuál est una técnica clave para la gestión de conflictos según Daniel Goleman?", o:["Motivación extrínseca", "Innovación", "Empatía", "Asertividad"], c:2},
-      {q:"¿Qué herramienta de gestión de proyectos se basa en tarjetas y tableros?", o:["Google Calendar", "Microsoft Outlook", "Asana", "Trello"], c:3},
-      {q:"En una negociación salarial, ¿qué competencia social es fundamental para comprender las preocupaciones financieras del empleado y llegar a un acuerdo satisfactorio para ambas partes?", o:["Influencia", "Empatía", "Comunicación efectiva", "Resolución de conflictos"], c:1},
-      {q:"¿Qué habilidad es crucial para inducir respuestas deseables en los demás?", o:["Adaptabilidad", "Habilidades sociales", "Resiliencia", "Motivación"], c:1},
-      {q:"¿Qué elemento es esencial para formular objetivos alcanzables?", o:["Innovación", "Flexibilidad", "Creatividad", "Especificidad"], c:3},
-      {q:"¿Qué elemento del método SMART para establecer objetivos se refiere a la necesidad de que las metas sean realistas y se ajusten a los recursos y capacidades disponibles?", o:["Medible", "Temporal", "Específico", "Alcanzable"], c:3},
-      {q:"Un emprendedor que prioriza la sostenibilidad ambiental al desarrollar su negocio, ¿qué competencia personal está demostrando principalmente?", o:["Autorregulación", "Conciencia individual", "Habilidades sociales", "Empatía"], c:1},
-      {q:"¿Qué estrategia es útil para evitar la procrastinación y aumentar la productividad?", o:["Técnica Delphi", "Método SMART", "Técnica Pomodoro", "Design Thinking"], c:2},
-      {q:"¿Qué técnica de comunicación es esencial en situaciones conflictivas?", o:["Comunicación no verbal", "Feedback constructivo", "Comunicación asertiva", "Escucha activa"], c:3},
-      {q:"En un conflicto entre dos departamentos, ¿qué habilidad de la inteligencia emocional permite a un líder comprender las perspectivas de ambos y buscar soluciones que beneficien a todas las partes?", o:["Motivación", "Habilidades sociales", "Autorregulación", "Empatía"], c:3},
-      {q:"¿Qué competencia social es clave para la negociación efectiva?", o:["Habilidades interpersonales", "Adaptabilidad", "Autorregulación", "Motivación intrínseca"], c:0},
-      {q:"¿Qué técnica de trabajo en equipo se centra en la generación de ideas en un ambiente libre de juicios críticos, fomentando la cantidad sobre la calidad inicial de las ideas?", o:["Brainstorming", "Matriz de Eisenhower", "Método Delphi", "Design Thinking"], c:0},
-      {q:"¿Qué práctica ayuda a mejorar la autoconciencia y la regulación emocional?", o:["Mindfulness", "Role-playing", "Visualización positiva", "Técnica de la pausa"], c:0},
-      {q:"¿Qué competencia es esencial para la gestión del tiempo y el éxito profesional?", o:["Iniciativa", "Empatía", "Resiliencia", "Autorregulación"], c:3},
-      {q:"¿Qué técnica de trabajo en equipo se centra en entender al usuario para innovar soluciones?", o:["Brainstorming", "Design Thinking", "Técnica Delphi", "Método SMART"], c:1},
-      {q:"¿Qué técnica de mediación implica la intervención de una tercera parte neutral?", o:["Negociación", "Brainstorming", "Design Thinking", "Mediación"], c:3},
-      {q:"¿Qué competencia permite a los individuos ajustarse a nuevas condiciones laborales?", o:["Iniciativa", "Adaptabilidad", "Empatía", "Autorregulación"], c:1},
-      {q:"¿Qué herramienta se utiliza para clasificar tareas según su urgencia e importancia?", o:["Matriz de Eisenhower", "Método Kanban", "Técnica Pomodoro", "Diagrama de Gantt"], c:0},
-      {q:"¿Qué herramienta digital permite la planificación estructurada de tareas y eventos?", o:["RescueTime", "Google Calendar", "Toggl", "Trello"], c:1}
-    ]
-  }
-};
+    // ✏️ EDITA AQUÍ tus asignaturas, temas y preguntas.
+    // Formato: pregunta, opciones y c = índice (empezando en 0) de la correcta.
+    const DATA = {
+        "Programación": {
+            "Tema 1 – Java básico": [
+                {q:"¿Qué palabra clave declara una constante en Java?", o:["const","final","static","let"], c:1},
+                {q:"¿Cuál es el tipo de dato para números decimales de doble precisión?", o:["float","int","double","long"], c:2},
+                {q:"¿Cómo se llama el método principal de una aplicación Java?", o:["start","run","main","init"], c:2}
+            ]
+        },
+        "Bases de Datos": {
+            "Tema 1 – SQL": [
+                {q:"¿Qué sentencia se usa para consultar datos?", o:["INSERT","SELECT","UPDATE","DROP"], c:1},
+                {q:"¿Qué cláusula filtra filas?", o:["WHERE","ORDER BY","GROUP BY","JOIN"], c:0},
+                {q:"¿Qué restricción identifica de forma única cada fila?", o:["FOREIGN KEY","UNIQUE NULL","PRIMARY KEY","CHECK"], c:2}
+            ]
+        },
+        "Lenguajes de Marcas": {
+            "Tema 1 – HTML": [
+                {q:"¿Qué etiqueta define un enlace?", o:["<link>","<a>","<href>","<url>"], c:1},
+                {q:"¿Qué etiqueta es la de mayor nivel de encabezado?", o:["<h6>","<head>","<h1>","<header>"], c:2}
+            ]
+        },
+        "Desarrollo Web en Entorno Cliente": {
+            "Tema 1": [
+                {q:"¿Qué lenguaje de marcado se utiliza para estructurar el contenido de una página web?", o:["JSON", "JavaScript", "HTML", "CSS"], c:2},
+                {q:"¿Qué diferencia básica existe entre HTML y JavaScript?", o:["HTML estructura contenido y JavaScript añade comportamiento.", "JavaScript estructura contenido y HTML ejecuta lógica.", "Ambos son hojas de estilo.", "Ambos son formatos de datos."], c:0},
+                {q:"¿Qué tecnología controla principalmente la presentación visual de una página web?", o:["JSON", "Tcl", "CSS", "HTML"], c:2},
+                {q:"¿Qué diferencia básica existe entre CSS y JavaScript?", o:["CSS define presentación y JavaScript comportamiento.", "CSS gestiona la base de datos y JavaScript el servidor.", "Ambos son formatos de intercambio.", "Ambos son lenguajes de marcado."], c:0},
+                {q:"¿Qué combinación permite crear una página estructurada, con estilos e interacción del lado cliente?", o:["Java, PHP y DNS", "SQL, FTP y SMTP", "HTML, CSS y JavaScript", "JSON, XML y FTP"], c:2},
+                {q:"¿Qué objetivo persigue HTML5 en el desarrollo de aplicaciones web modernas?", o:["Eliminar CSS.", "Mejorar las capacidades y la experiencia web, incluido el uso móvil.", "Sustituir todos los lenguajes de programación.", "Eliminar JavaScript."], c:1},
+                {q:"¿Qué lenguaje se utiliza para crear programas que realizan acciones dentro de una página web?", o:["JavaScript", "Python", "Ruby", "PHP"], c:0},
+                {q:"¿Qué ventaja ofrece colocar JavaScript en un archivo externo?", o:["Impide compartir código entre páginas.", "Obliga a duplicar el script.", "Elimina la necesidad de HTML.", "Facilita la reutilización y mantiene el HTML más limpio."], c:3},
+                {q:"¿Qué lenguaje de scripting se ha utilizado para desarrollar prototipos y aplicaciones de script?", o:["SQL", "CSS", "Tcl", "HTML"], c:2},
+                {q:"¿Qué característica distingue a los lenguajes de scripting frente a los compilados?", o:["Generan siempre código máquina antes de ejecutarse.", "Se ejecutan mediante un intérprete.", "Solo pueden ejecutarse en servidores.", "No pueden interactuar con páginas web."], c:1},
+                {q:"¿Qué tecnología permite actualizar partes de una página sin recargarla completamente?", o:["HTML5", "AJAX", "XML", "CSS"], c:1},
+                {q:"¿Qué ventaja aporta AJAX a la experiencia del usuario?", o:["Elimina la comunicación con el servidor.", "Sustituye a HTML.", "Obliga a recargar toda la página.", "Reduce las recargas completas al actualizar partes de la página."], c:3},
+                {q:"¿Qué formato de datos es habitual para intercambiar información entre cliente y servidor?", o:["XHTML", "JSON", "CSS", "Tcl"], c:1},
+                {q:"¿Qué modelo divide el trabajo entre un cliente que solicita servicios y un servidor que responde?", o:["Cliente-servidor", "Modelo sin red", "Peer-to-peer exclusivamente", "Monolítico puro"], c:0},
+                {q:"¿Qué componente inicia normalmente una petición en el modelo cliente-servidor?", o:["El cliente", "El servidor", "La base de datos", "El depurador"], c:0},
+                {q:"¿Qué componente procesa las solicitudes y devuelve resultados en el modelo cliente-servidor?", o:["El cliente", "El navegador exclusivamente", "El servidor", "El editor"], c:2},
+                {q:"¿Qué ventaja aporta JSON en aplicaciones cliente-servidor?", o:["Sustituye la presentación CSS.", "Representa datos de forma ligera para intercambiarlos.", "Ejecuta código en el navegador.", "Compila JavaScript."], c:1},
+                {q:"¿Qué cambio favoreció la expansión del modelo cliente-servidor con la llegada de los PC?", o:["La distribución de carga entre cliente y servidor.", "El abandono de las redes.", "La centralización total en mainframes.", "La desaparición de interfaces gráficas."], c:0},
+                {q:"¿Qué arquitectura permite acceder a información desde clientes de distintas plataformas?", o:["Solo peer-to-peer", "Monolítica", "Sin red", "Cliente-servidor"], c:3},
+                {q:"¿Qué característica de Vue.js permite incorporarlo gradualmente a un proyecto?", o:["Su enfoque progresivo.", "El uso exclusivo de XML.", "La ejecución solo en servidor.", "La ausencia de componentes."], c:0},
+                {q:"¿Qué framework se describe habitualmente como progresivo porque puede incorporarse de forma gradual?", o:["XHTML", "Tcl", "Flash", "Vue.js"], c:3},
+                {q:"¿Qué ventaja principal ofrecía jQuery en muchos desarrollos web?", o:["Reemplazar por completo JavaScript.", "Eliminar la necesidad de programación.", "Crear bases de datos.", "Simplificar el código y las diferencias de compatibilidad entre navegadores."], c:3},
+                {q:"¿Qué problema intentaban resolver librerías como jQuery?", o:["La falta de bases de datos.", "La compresión de imágenes.", "Las diferencias de comportamiento entre navegadores.", "La ausencia de servidores web."], c:2},
+                {q:"¿Qué framework de interfaz utiliza un DOM virtual para actualizar la interfaz eficientemente?", o:["Flash", "React", "Tcl", "jQuery"], c:1},
+                {q:"¿Qué característica de React contribuye a reutilizar partes de una interfaz?", o:["Los archivos CSS externos exclusivamente.", "Los componentes.", "Los registros DNS.", "Las sesiones FTP."], c:1},
+                {q:"¿Qué tecnología permite manipular dinámicamente elementos de una página mediante JavaScript?", o:["SQL", "FTP", "El DOM", "SMTP"], c:2},
+                {q:"¿Qué objetivo tiene un depurador de JavaScript?", o:["Gestionar versiones del proyecto.", "Localizar y corregir errores del código.", "Crear bases de datos.", "Diseñar hojas de estilo."], c:1},
+                {q:"¿Qué herramienta permite detectar y analizar errores durante la ejecución del código?", o:["Editor de texto", "Depurador", "Generador de estilos", "Controlador de versiones"], c:1},
+                {q:"¿Qué tipo de herramienta registra cambios y facilita trabajar con distintas versiones del código?", o:["Control de versiones.", "Generador de estilos.", "Depurador.", "Editor de texto."], c:0},
+                {q:"¿Qué ventaja aporta un sistema de control de versiones en un proyecto web?", o:["Ejecuta automáticamente JavaScript.", "Elimina la necesidad de código.", "Facilita la colaboración y el seguimiento de cambios.", "Sustituye el depurador."], c:2},
+                {q:"¿Qué debe hacer un navegador si un script JavaScript tarda demasiado y consume recursos?", o:["Borrar la página.", "Cerrar siempre el sistema operativo.", "Avisar al usuario y permitir detenerlo.", "Convertir el script en CSS."], c:2},
+                {q:"¿Qué limitación de seguridad impide normalmente que JavaScript acceda libremente a los archivos del equipo?", o:["La ausencia de funciones.", "El uso de CSS.", "La falta de variables.", "El aislamiento impuesto por el navegador."], c:3},
+                {q:"¿Qué tecnología obsoleta compitió con JavaScript para añadir interactividad en páginas web?", o:["Flash", "AJAX", "CSS", "JSON"], c:0},
+                {q:"¿Qué caracteriza un desarrollo web del lado cliente bien organizado?", o:["Mezcla todo el código sin criterio.", "Evita herramientas de depuración.", "Separa estructura, presentación y comportamiento usando tecnologías adecuadas.", "No utiliza control de versiones."], c:2},
+                {q:"¿Qué aspecto debe adaptarse en aplicaciones utilizadas desde dispositivos móviles?", o:["Presentación y controles.", "Solo el nombre del dominio.", "Solo la base de datos.", "Únicamente el servidor."], c:0},
+                {q:"¿Qué tecnología se encarga principalmente de la estructura de una interfaz Android tradicional?", o:["JavaScript", "HTML", "CSS", "XML"], c:3}
+            ],
+            "Tema 2": [
+                {q:"¿Qué función permite conocer el tipo de un valor en JavaScript?", o:["typeof", "toString", "parseFloat", "parseInt"], c:0},
+                {q:"¿Qué resultado produce 5 + \"5\" en JavaScript?", o:["\"55\"", "55", "10", "\"10\""], c:0},
+                {q:"¿Qué tipo de valor es \"Hola\" en JavaScript?", o:["Number", "String", "Object obligatoriamente", "Boolean"], c:1},
+                {q:"¿Qué palabra se utiliza para representar un valor lógico falso?", o:["no", "false", "off", "0 obligatoriamente"], c:1},
+                {q:"¿Qué estructura de control permite escoger entre varias ramas según condiciones?", o:["if", "parseFloat", "var", "typeof"], c:0},
+                {q:"¿Qué función convierte una cadena en un número entero?", o:["typeof()", "parseFloat()", "toString()", "parseInt()"], c:3},
+                {q:"¿Qué palabra se utiliza para representar un valor lógico verdadero?", o:["yes", "on", "1 obligatoriamente", "true"], c:3},
+                {q:"¿Qué tipo de dato representa un conjunto de propiedades como nombre y edad?", o:["Object", "Number", "Boolean", "String"], c:0},
+                {q:"¿Qué operador se utiliza para concatenar cadenas en JavaScript?", o:["&&", "|", "+", "&"], c:2},
+                {q:"¿Qué significa que JavaScript sea sensible a mayúsculas y minúsculas?", o:["Solo acepta minúsculas", "Ignora diferencias entre mayúsculas y minúsculas", "Solo acepta mayúsculas", "Distingue entre nombres escritos con diferente capitalización"], c:3},
+                {q:"¿Qué operador lógico representa la conjunción Y?", o:["||", "=", "&&", "!"], c:2},
+                {q:"¿Qué hace break dentro de un bucle?", o:["Declara una variable", "Salta siempre a la siguiente iteración", "Reinicia el bucle", "Finaliza el bucle actual"], c:3},
+                {q:"¿Qué operador realiza una comparación de igualdad con conversión de tipos?", o:["==", "===", "!==", "="], c:0},
+                {q:"¿Qué palabra clave tradicional permite declarar variables en JavaScript?", o:["type", "define", "var", "global"], c:2},
+                {q:"¿Qué operador incrementa una variable en una unidad?", o:["+=", "--", "++", "="], c:2},
+                {q:"¿Qué función está orientada a mostrar contenido directamente en el documento?", o:["document.write()", "parseInt()", "console.log()", "prompt()"], c:0},
+                {q:"¿Qué estructura de control se usa para repetir una secuencia un número controlado de veces?", o:["switch exclusivamente", "typeof", "if", "for"], c:3},
+                {q:"¿Cómo pueden declararse varias variables en una misma sentencia?", o:["Usando un array obligatoriamente", "Separándolas por dos puntos", "Separándolas por comas", "No es posible"], c:2},
+                {q:"¿Qué ventaja aporta la comparación estricta?", o:["Asigna el valor de la derecha", "Compara valor y tipo sin conversión automática", "Solo funciona con números", "Convierte siempre los operandos a texto"], c:1},
+                {q:"¿Qué variable solo es accesible dentro del ámbito donde se declara?", o:["Una variable local", "Una variable global", "Una constante del sistema", "Una propiedad del objeto global"], c:0},
+                {q:"¿Qué devuelve parseFloat(\"3.14\")?", o:["\"3.14\"", "3.14", "3", "false"], c:1},
+                {q:"¿Qué tipo devuelve typeof para un array en JavaScript?", o:["\"object\"", "\"collection\"", "\"array\"", "\"list\""], c:0},
+                {q:"¿Qué sentencia repite un bloque mientras una condición sea verdadera?", o:["switch", "break", "if", "while"], c:3},
+                {q:"¿Qué caracteriza el uso correcto de variables y operadores?", o:["Usar siempre variables globales", "Elegir tipos, ámbito y operadores adecuados a la operación", "Convertir todo a texto", "Evitar comparaciones estrictas"], c:1},
+                {q:"¿Qué valor especial representa ausencia intencionada de valor?", o:["NaN", "null", "undefined exclusivamente", "0"], c:1},
+                {q:"¿Qué valor devuelve typeof null en JavaScript?", o:["\"undefined\"", "\"null\"", "\"object\"", "\"boolean\""], c:2},
+                {q:"¿Qué función convierte una cadena en un número decimal?", o:["toString()", "parseFloat()", "parseInt()", "typeof()"], c:1},
+                {q:"¿Qué tipo de estructura representa una colección ordenada accesible por índice?", o:["String", "Number", "Array", "Boolean"], c:2},
+                {q:"¿Qué método permite convertir un número en cadena?", o:["parseInt()", "typeof()", "parseFloat()", "toString()"], c:3},
+                {q:"¿Qué operador realiza una comparación estricta de igualdad?", o:["===", "==", "!=", "="], c:0},
+                {q:"¿Qué tipo de valor es 42 en JavaScript?", o:["Number", "Boolean", "String", "Array"], c:0},
+                {q:"¿Qué operador realiza desplazamiento a la derecha sin signo?", o:[">>", "^", ">>>", "<<"], c:2},
+                {q:"¿Qué operador comprueba desigualdad estricta?", o:["===", "=", "!==", "!="], c:2},
+                {q:"¿Qué operador lógico representa la disyunción O?", o:["||", "=", "!", "&&"], c:0},
+                {q:"¿Qué operador asigna un valor a una variable?", o:["==", "=", "!=", "==="], c:1}
+            ],
+            "Tema 3": [
+                {q:"¿Qué propiedad permite conocer qué elemento está enfocado antes de operar sobre él?", o:["document.URL", "window.screenX", "document.activeElement", "window.length"], c:2},
+                {q:"¿Qué método de document permite escribir contenido en el documento?", o:["write()", "alert()", "open()", "stop()"], c:0},
+                {q:"¿Qué objeto representa la ventana del navegador?", o:["document", "navigator", "window", "screen"], c:2},
+                {q:"¿Qué objeto permite trabajar con el historial de navegación?", o:["location", "history", "navigator", "document"], c:1},
+                {q:"¿Qué propiedad de document permite acceder a los enlaces del documento?", o:["links", "forms", "images", "scripts"], c:0},
+                {q:"¿Qué propiedad permite conocer la dirección completa del documento cargado?", o:["location", "document.URL", "navigator.appName", "window.href"], c:1},
+                {q:"¿Qué método es apropiado para pedir una confirmación binaria al usuario?", o:["window.alert()", "window.prompt()", "window.confirm()", "window.open()"], c:2},
+                {q:"¿Qué método solicita un valor de entrada mediante un cuadro de texto al usuario?", o:["alert()", "confirm()", "prompt()", "open()"], c:2},
+                {q:"¿Qué método de window desplaza el documento una distancia relativa?", o:["scrollTo()", "scrollBy()", "resizeTo()", "moveTo()"], c:1},
+                {q:"¿Qué propiedad de window representa la ubicación actual del documento?", o:["screenX", "length", "location", "navigator"], c:2},
+                {q:"¿Qué propiedad de document devuelve la URL completa del documento?", o:["URL", "body", "forms", "location exclusivamente de document"], c:0},
+                {q:"¿Qué método de window detiene la carga de la ventana?", o:["focus()", "alert()", "stop()", "open()"], c:2},
+                {q:"¿Qué método de window muestra un mensaje con botones Aceptar y Cancelar?", o:["alert()", "confirm()", "prompt()", "stop()"], c:1},
+                {q:"¿Qué mecanismo permite guardar pares clave-valor sin fecha de expiración en el navegador?", o:["sessionStorage", "persistentFrame", "cookieStorage", "localStorage"], c:3},
+                {q:"¿Qué método es apropiado para escribir contenido HTML directamente durante la carga del documento?", o:["window.confirm()", "window.open()", "document.write()", "navigator.write()"], c:2},
+                {q:"¿Qué método de window desplaza el documento a unas coordenadas?", o:["resizeTo()", "stop()", "scrollTo()", "open()"], c:2},
+                {q:"¿Qué caracteriza un uso correcto de objetos del navegador?", o:["Usar navigator para escribir HTML", "Usar localStorage para abrir ventanas", "Elegir window, document y almacenamiento según la tarea concreta", "Usar alert() para modificar el DOM"], c:2},
+                {q:"¿Qué mecanismo permite guardar datos durante una sesión del navegador?", o:["alert()", "sessionStorage", "document.write()", "localStorage exclusivamente permanente"], c:1},
+                {q:"¿Qué propiedad de document devuelve el elemento que tiene actualmente el foco?", o:["body", "activeElement", "forms", "URL"], c:1},
+                {q:"¿Qué método solicita actualizar una animación antes del siguiente repintado?", o:["requestAnimationFrame()", "alert()", "document.write()", "setInterval() exclusivamente"], c:0},
+                {q:"¿Qué método de document crea un nodo de texto?", o:["newTextNode()", "createTextNode()", "writeText()", "createElementText()"], c:1},
+                {q:"¿Qué concepto de POO permite que una clase derive de otra?", o:["Encapsulación", "Composición exclusivamente", "Instanciación", "Herencia"], c:3},
+                {q:"¿Qué técnica antigua se utilizaba para almacenar datos o ejecutar funciones de forma invisible?", o:["Clases abstractas", "Frames ocultos", "Arrays asociativos", "DOM virtual"], c:1},
+                {q:"¿Qué propiedad de window devuelve el objeto Navigator?", o:["navigator", "history", "document", "location"], c:0},
+                {q:"¿Qué método registra un manejador de eventos en document?", o:["bindEvent()", "addEventListener()", "attachEvent() exclusivamente", "registerHandler()"], c:1},
+                {q:"¿Qué palabra clave se utiliza para crear una instancia a partir de una clase?", o:["instantiate", "create", "new", "objectify"], c:2},
+                {q:"¿Qué función cumple el polimorfismo?", o:["Cambiar el tamaño de una ventana", "Crear nodos de texto", "Guardar pares clave-valor", "Permitir comportamiento diferente mediante una interfaz o nombre común"], c:3},
+                {q:"¿Qué relación existe entre una clase y un objeto?", o:["El objeto define y la clase es una URL", "La clase define y el objeto es una instancia concreta", "Son conceptos sin relación", "La clase solo existe en HTML"], c:1},
+                {q:"¿Qué propiedad de window devuelve la altura exterior de la ventana?", o:["outerHeight", "length", "innerWidth", "screenX"], c:0},
+                {q:"¿Qué propiedad de window devuelve la coordenada horizontal de la ventana respecto a la pantalla?", o:["location", "length", "outerHeight", "screenX"], c:3},
+                {q:"¿Qué propiedad de document devuelve el elemento body?", o:["head", "URL", "forms", "body"], c:3},
+                {q:"¿Qué almacenamiento del navegador es persistente entre sesiones hasta que se elimina?", o:["forms", "localStorage", "sessionStorage", "activeElement"], c:1},
+                {q:"¿Qué significa instanciar un objeto?", o:["Ocultar propiedades", "Heredar una clase", "Crear un ejemplar de una clase", "Definir una clase"], c:2},
+                {q:"¿Qué concepto permite métodos con el mismo nombre y comportamiento adaptado?", o:["Encapsulación", "Instanciación", "Serialización", "Polimorfismo"], c:3},
+                {q:"¿Qué método puede utilizarse para crear contenido textual como nodo antes de insertarlo en el DOM?", o:["document.createTextNode()", "window.stop()", "window.open()", "window.alert()"], c:0},
+                {q:"¿Qué objeto proporciona información sobre el navegador?", o:["navigator", "location", "document", "localStorage"], c:0},
+                {q:"¿Qué objeto permite trabajar con la URL y navegación de la ventana?", o:["forms", "location", "activeElement", "document"], c:1},
+                {q:"¿Qué colección de document permite acceder a los formularios del documento?", o:["links exclusivamente", "styles", "forms", "frames"], c:2},
+                {q:"¿Qué método es apropiado para mostrar una advertencia simple al usuario?", o:["document.createTextNode()", "window.resizeTo()", "window.alert()", "window.confirm()"], c:2},
+                {q:"¿Qué función cumple la herencia en POO?", o:["Reutilizar y especializar características de una clase base", "Guardar datos en localStorage", "Crear nodos DOM", "Abrir ventanas"], c:0}
+            ]
+        },
+        "Despliegue de aplicaciones web": {
+            "Tema 1": [
+                {q:"¿Qué componente ejecuta lógica empresarial del lado servidor?", o:["El resolver DNS", "El cliente de correo", "El navegador", "El servidor de aplicaciones"], c:3},
+                {q:"¿Qué ventaja puede aportar un clúster?", o:["Impedir el reparto de carga", "Reducir siempre el número de servidores", "Mayor capacidad y disponibilidad del servicio", "Eliminar la necesidad de red"], c:2},
+                {q:"¿Qué servidor de aplicaciones libre está relacionado con tecnologías Java empresariales?", o:["WildFly", "IIS exclusivamente", "WordPress", "FileZilla"], c:0},
+                {q:"¿Qué servidor web se utiliza habitualmente en plataformas Microsoft .NET?", o:["PostgreSQL", "WordPress", "Apache Tomcat exclusivamente", "IIS"], c:3},
+                {q:"¿Qué componente sirve páginas y recursos HTTP al navegador?", o:["El servidor web", "El servidor LDAP", "El cliente FTP", "El servidor DNS"], c:0},
+                {q:"¿Qué ventaja caracteriza a las plataformas de software libre?", o:["Solo funcionan en servidores propietarios", "Obligan a usar un único proveedor", "Impiden acceder al código fuente", "Permiten modificar y redistribuir el software según su licencia"], c:3},
+                {q:"¿Qué es un servidor de aplicaciones web?", o:["Un editor de código", "Un sistema de nombres", "Un software que ejecuta lógica de aplicaciones y ofrece servicios a los clientes", "Un programa dedicado solo a almacenar imágenes"], c:2},
+                {q:"¿Qué ventaja suele aportar una plataforma libre?", o:["Dependencia total de un único fabricante", "Uso exclusivo en una arquitectura concreta", "Mayor libertad para adaptar el software", "Prohibición de modificar el código"], c:2},
+                {q:"¿Qué característica facilita el mantenimiento y control de varios servidores?", o:["La duplicación manual de datos", "Una arquitectura bien estructurada y administrable", "La ausencia de documentación", "La eliminación de capas"], c:1},
+                {q:"¿Qué componente del modelo de tres capas gestiona el almacenamiento de información?", o:["La capa visual", "La capa de presentación", "La capa de navegación", "La capa de datos"], c:3},
+                {q:"¿Qué parte del modelo de tres capas se aproxima al modelo de MVC?", o:["La capa de presentación exclusivamente", "El sistema DNS", "La capa de datos y lógica asociada al dominio", "El servidor web"], c:2},
+                {q:"¿Qué solución permite aumentar rápidamente capacidad añadiendo nodos similares?", o:["La gestión de sesión", "La compresión de recursos", "La escalabilidad vertical exclusivamente", "La escalabilidad horizontal"], c:3},
+                {q:"¿Qué componente del modelo de tres capas contiene la lógica de negocio?", o:["La capa física", "La capa DNS", "La capa de presentación", "La capa de aplicación"], c:3},
+                {q:"¿Qué función cumple la capa de presentación?", o:["Administrar certificados", "Recibir acciones del usuario y mostrar resultados", "Gestionar físicamente la base de datos", "Resolver nombres de dominio"], c:1},
+                {q:"¿Qué plataforma libre es conocida por la gestión de blogs y sitios web?", o:["IIS", "Tomcat Manager", "WordPress", "Active Directory"], c:2},
+                {q:"¿Qué modelo simple puede ser suficiente para servir páginas web estáticas?", o:["Tres capas obligatoriamente", "Arquitectura distribuida obligatoria", "Cliente-servidor", "Clúster activo-activo"], c:2},
+                {q:"¿Qué característica permite adaptar una aplicación a diferentes arquitecturas físicas?", o:["La flexibilidad de la arquitectura", "La compresión HTTP", "La caché del navegador", "La firma digital"], c:0},
+                {q:"¿Qué servidor web es uno de los más utilizados en entornos de software libre?", o:["Microsoft Access", "Apache HTTP Server", "PostgreSQL", "Tomcat Manager"], c:1},
+                {q:"¿Qué desventaja puede tener una plataforma propietaria?", o:["Ausencia de herramientas", "Falta obligatoria de documentación", "Imposibilidad de recibir soporte", "Dependencia del proveedor y condiciones de licencia"], c:3},
+                {q:"¿Qué relación existe entre el modelo de tres capas y MVC?", o:["MVC elimina la capa de datos", "Ambos separan responsabilidades de presentación, lógica y datos", "Son exactamente el mismo patrón en cualquier caso", "El modelo de tres capas no separa responsabilidades"], c:1},
+                {q:"¿Qué es un clúster de servidores?", o:["Un navegador con varias pestañas", "Una base de datos con varias tablas", "Un conjunto de servidores que colaboran para ofrecer un servicio", "Un único servidor con varios usuarios"], c:2},
+                {q:"¿Qué elemento es fundamental para indicar cómo se despliega una aplicación Java EE?", o:["El descriptor de despliegue", "El archivo de audio", "El archivo hosts", "El registro MX"], c:0},
+                {q:"¿Qué función cumple la capa de datos?", o:["Generar iconos", "Resolver DNS", "Gestionar únicamente formularios", "Acceder y mantener la información persistente"], c:3},
+                {q:"¿Qué ventaja aporta separar una aplicación en capas?", o:["Impide escalar", "Facilita mantenimiento, evolución y reparto de responsabilidades", "Elimina la reutilización", "Obliga a duplicar código"], c:1},
+                {q:"¿Qué mecanismo permite conservar información asociada a un usuario entre peticiones?", o:["La resolución DNS", "La gestión de sesión", "El registro MX", "La compresión GZIP"], c:1},
+                {q:"¿Qué debe valorar una organización al elegir una plataforma web?", o:["Solo el logotipo del producto", "Únicamente el lenguaje visual", "Coste, soporte, flexibilidad, requisitos y mantenimiento", "Solo el número de páginas"], c:2},
+                {q:"¿Qué ventaja suelen ofrecer las plataformas propietarias?", o:["Redistribución sin condiciones", "Ausencia total de licencias", "Acceso libre obligatorio al código fuente", "Soporte comercial y herramientas integradas del fabricante"], c:3},
+                {q:"¿Qué tipo de escalabilidad consiste en aumentar recursos de una máquina existente?", o:["Escalabilidad horizontal", "Escalabilidad distribuida", "Escalabilidad de presentación", "Escalabilidad vertical"], c:3},
+                {q:"¿Qué requisito es importante en una arquitectura web con varios servidores?", o:["Coordinar sesiones y datos compartidos", "Usar una única conexión para todos", "Evitar mecanismos de balanceo", "Eliminar toda persistencia"], c:0},
+                {q:"¿Qué solución permite aumentar capacidad añadiendo CPU o RAM a un servidor?", o:["La escalabilidad vertical", "El clustering DNS", "La escalabilidad horizontal", "La caché de identidad"], c:0},
+                {q:"¿Qué es un descriptor de despliegue en Java EE?", o:["Un archivo que define cómo debe configurarse o desplegarse una aplicación", "Un archivo de imagen", "Un certificado digital", "Un registro DNS"], c:0},
+                {q:"¿Qué tipo de escalabilidad consiste en añadir más máquinas al sistema?", o:["Escalabilidad lógica", "Escalabilidad horizontal", "Escalabilidad de sesión", "Escalabilidad vertical"], c:1},
+                {q:"¿Qué tipo de páginas se manejan con facilidad mediante un modelo cliente-servidor sencillo?", o:["Servicios de directorio", "Aplicaciones empresariales complejas exclusivamente", "Sistemas distribuidos obligatoriamente", "Páginas estáticas"], c:3},
+                {q:"¿Qué característica permite ampliar la capacidad de una aplicación sin sustituir toda la arquitectura?", o:["La escalabilidad", "La serialización", "La compresión", "La autenticación"], c:0},
+                {q:"¿Qué función cumple la capa de negocio?", o:["Resolver direcciones IP", "Aplicar las reglas y procesos de la aplicación", "Transferir archivos", "Dibujar exclusivamente la interfaz"], c:1},
+                {q:"¿Qué componente del modelo de tres capas se encarga de mostrar la información al usuario?", o:["El servidor DNS", "La capa de persistencia exclusivamente", "La capa de presentación", "La capa de datos"], c:2},
+                {q:"¿Qué conjunto de tecnologías agrupa Apache, MariaDB o MySQL, Perl y PHP?", o:["Una plataforma web libre tipo XAMPP", "Un sistema de directorio", "Un servicio DNS", "Un servidor FTP exclusivamente"], c:0},
+                {q:"¿Qué permite una caché de identidad o sesión?", o:["Crear certificados", "Cambiar el sistema operativo", "Mantener información del usuario para reutilizarla durante su interacción", "Transferir archivos por FTP"], c:2},
+                {q:"¿Qué debe buscarse al diseñar una arquitectura web escalable?", o:["Mantener todos los usuarios en una sola sesión", "Poder aumentar capacidad manteniendo el servicio y la organización del sistema", "Evitar añadir recursos", "Eliminar la separación de capas"], c:1},
+                {q:"¿Qué caracteriza una arquitectura web bien diseñada?", o:["Depende de una única tecnología sin alternativas", "Mezcla presentación, negocio y datos sin estructura", "Separa responsabilidades y permite mantenimiento, adaptación y crecimiento", "Impide distribuir carga"], c:2},
+                {q:"Una empresa prevé un fuerte aumento de usuarios en su aplicación web. Necesita ampliar la capacidad del sistema mediante una solución transparente para la programación de la aplicación, aunque eso suponga una adaptación más lenta. ¿Qué actuación se ajusta mejor a este requisito?", o:["Aplicar escalabilidad vertical, añadiendo recursos a la máquina existente o creando una máquina virtual a partir de varias máquinas físicas.", "Aplicar componentización, separando en servicios independientes el envío de páginas web y las tareas de mantenimiento y control de los servidores.", "Aplicar portabilidad, de forma que la adaptación de la aplicación al nuevo entorno de despliegue se limite a cambios de configuración.", "Aplicar escalabilidad horizontal, añadiendo máquinas físicas iguales a las existentes y repartiendo entre ellas las peticiones de los usuarios."], c:0},
+                {q:"¿Qué capa del modelo de tres capas equivale al Modelo del patrón MVC?", o:["Servidor de aplicaciones", "Servidor de base de datos", "Servidor web", "Cliente o capa de presentación"], c:1}
+            ]
+        },
+        "FOL": {
+            "Tema 1": [
+                {q:"¿Qué aspecto es crucial al adaptar un currículum al sector objetivo?", o:["Usar un diseño gráfico llamativo", "Incluir todas las experiencias laborales", "Mantener el currículum en un solo idioma", "Uso de palabras clave específicas del sector"], c:3},
+                {q:"¿Qué red social es ideal para compartir logros profesionales y participar en debates del sector?", o:["Instagram", "Snapchat", "TikTok", "LinkedIn"], c:3},
+                {q:"¿Qué técnica de selección permite observar el comportamiento de los candidatos en situaciones simuladas?", o:["Entrevistas de salida", "Pruebas de conocimiento", "Entrevistas técnicas", "Dinámicas de grupo"], c:3},
+                {q:"En el sector público, ¿qué aspecto de los procesos de selección busca asegurar la transparencia, igualdad y mérito, minimizando la posibilidad de favoritismos?", o:["Regulación estricta", "Flexibilidad", "Herramientas de selección", "Duración del proceso"], c:0},
+                {q:"¿Qué tipo de entrevista sigue un formato y guion predefinidos?", o:["Entrevista de salida", "Entrevista por competencias", "Entrevista estructurada", "Entrevista semiestructurada"], c:2},
+                {q:"¿Qué tipo de contenido en YouTube puede potenciar la marca personal de un profesional?", o:["Fotos de eventos sociales", "Memes y vídeos humorísticos", "Vídeos de viajes personales", "Tutoriales y presentaciones"], c:3},
+                {q:"¿Qué ejemplo de marca personal exitosa se basa en la capacidad de revolucionar industrias?", o:["Elon Musk", "Sheryl Sandberg", "Mark Zuckerberg", "Oprah Winfrey"], c:0},
+                {q:"¿Qué estrategia es esencial para construir una marca personal sólida?", o:["Imitar marcas personales de otros", "Autoexploración y declaración de misión personal", "Centrarse solo en habilidades técnicas", "Evitar el uso de redes sociales"], c:1},
+                {q:"¿Qué tipo de entrevista permite explorar más a fondo las respuestas de los candidatos mediante preguntas adicionales?", o:["Entrevista de evaluación de desempeño", "Entrevista semiestructurada", "Entrevista estructurada", "Entrevista por competencias"], c:1},
+                {q:"¿Qué técnica de selección se utiliza para evaluar tanto conocimientos generales como específicos de los candidatos?", o:["Entrevistas de salida", "Dinámicas de grupo", "Pruebas de conocimiento", "Assessment centers"], c:2},
+                {q:"¿Cuál es una de las principales ventajas de utilizar assessment centers en la selección de personal?", o:["Simplificar el proceso de selección", "Reducir costos de contratación", "Aumentar la cantidad de candidatos", "Evaluar múltiples competencias en un entorno simulado"], c:3},
+                {q:"¿Qué es fundamental para gestionar la huella digital en favor de la empleabilidad?", o:["Mantener perfiles profesionales actualizados", "Evitar el uso de redes sociales", "Publicar contenido personal sin restricciones", "Compartir opiniones políticas"], c:0}
+            ],
+            "Tema 2": [
+                {q:"¿Qué herramienta digital permite un análisis preciso de la distribución del tiempo de trabajo, identificando hábitos ineficientes y mejorando la planificación futura?", o:["Aplicaciones de seguimiento del tiempo", "Calendarios digitales", "Software de gestión de proyectos", "Trello"], c:0},
+                {q:"¿Qué herramienta de autoevaluación permite identificar fortalezas y áreas de mejora mediante retroalimentación de diversas fuentes (superiores, compañeros, subordinados y autoevaluación)?", o:["Dinámicas de grupo", "Feedback 360", "Pruebas psicométricas", "Assessment centers"], c:1},
+                {q:"¿Qué técnica de autorregulación emocional implica cambiar la percepción de una situación estresante para verla desde un ángulo más positivo, facilitando la gestión del estrés?", o:["Mindfulness", "Técnica Pomodoro", "Visualización positiva", "Reencuadre cognitivo"], c:3},
+                {q:"¿Qué método de organización visual utiliza tarjetas para gestionar el flujo de trabajo, mostrando las etapas del proceso y permitiendo identificar cuellos de botella?", o:["GTD", "Kanban", "Diagrama de Gantt", "Matriz de Eisenhower"], c:1},
+                {q:"¿Qué competencia personal es crucial para enfrentar y superar adversidades?", o:["Iniciativa", "Empatía", "Resiliencia", "Autorregulación"], c:2},
+                {q:"¿Cuál est una técnica clave para la gestión de conflictos según Daniel Goleman?", o:["Motivación extrínseca", "Innovación", "Empatía", "Asertividad"], c:2},
+                {q:"¿Qué herramienta de gestión de proyectos se basa en tarjetas y tableros?", o:["Google Calendar", "Microsoft Outlook", "Asana", "Trello"], c:3},
+                {q:"En una negociación salarial, ¿qué competencia social es fundamental para comprender las preocupaciones financieras del empleado y llegar a un acuerdo satisfactorio para ambas partes?", o:["Influencia", "Empatía", "Comunicación efectiva", "Resolución de conflictos"], c:1},
+                {q:"¿Qué habilidad es crucial para inducir respuestas deseables en los demás?", o:["Adaptabilidad", "Habilidades sociales", "Resiliencia", "Motivación"], c:1},
+                {q:"¿Qué elemento es esencial para formular objetivos alcanzables?", o:["Innovación", "Flexibilidad", "Creatividad", "Especificidad"], c:3},
+                {q:"¿Qué elemento del método SMART para establecer objetivos se refiere a la necesidad de que las metas sean realistas y se ajusten a los recursos y capacidades disponibles?", o:["Medible", "Temporal", "Específico", "Alcanzable"], c:3},
+                {q:"Un emprendedor que prioriza la sostenibilidad ambiental al desarrollar su negocio, ¿qué competencia personal está demostrando principalmente?", o:["Autorregulación", "Conciencia individual", "Habilidades sociales", "Empatía"], c:1},
+                {q:"¿Qué estrategia es útil para evitar la procrastinación y aumentar la productividad?", o:["Técnica Delphi", "Método SMART", "Técnica Pomodoro", "Design Thinking"], c:2},
+                {q:"¿Qué técnica de comunicación es esencial en situaciones conflictivas?", o:["Comunicación no verbal", "Feedback constructivo", "Comunicación asertiva", "Escucha activa"], c:3},
+                {q:"En un conflicto entre dos departamentos, ¿qué habilidad de la inteligencia emocional permite a un líder comprender las perspectivas de ambos y buscar soluciones que beneficien a todas las partes?", o:["Motivación", "Habilidades sociales", "Autorregulación", "Empatía"], c:3},
+                {q:"¿Qué competencia social es clave para la negociación efectiva?", o:["Habilidades interpersonales", "Adaptabilidad", "Autorregulación", "Motivación intrínseca"], c:0},
+                {q:"¿Qué técnica de trabajo en equipo se centra en la generación de ideas en un ambiente libre de juicios críticos, fomentando la cantidad sobre la calidad inicial de las ideas?", o:["Brainstorming", "Matriz de Eisenhower", "Método Delphi", "Design Thinking"], c:0},
+                {q:"¿Qué práctica ayuda a mejorar la autoconciencia y la regulación emocional?", o:["Mindfulness", "Role-playing", "Visualización positiva", "Técnica de la pausa"], c:0},
+                {q:"¿Qué competencia es esencial para la gestión del tiempo y el éxito profesional?", o:["Iniciativa", "Empatía", "Resiliencia", "Autorregulación"], c:3},
+                {q:"¿Qué técnica de trabajo en equipo se centra en entender al usuario para innovar soluciones?", o:["Brainstorming", "Design Thinking", "Técnica Delphi", "Método SMART"], c:1},
+                {q:"¿Qué técnica de mediación implica la intervención de una tercera parte neutral?", o:["Negociación", "Brainstorming", "Design Thinking", "Mediación"], c:3},
+                {q:"¿Qué competencia permite a los individuos ajustarse a nuevas condiciones laborales?", o:["Iniciativa", "Adaptabilidad", "Empatía", "Autorregulación"], c:1},
+                {q:"¿Qué herramienta se utiliza para clasificar tareas según su urgencia e importancia?", o:["Matriz de Eisenhower", "Método Kanban", "Técnica Pomodoro", "Diagrama de Gantt"], c:0},
+                {q:"¿Qué herramienta digital permite la planificación estructurada de tareas y eventos?", o:["RescueTime", "Google Calendar", "Toggl", "Trello"], c:1}
+            ]
+        }
+    };
 
-const $ = id => document.getElementById(id);
-const KEY = "academia-daw-hist";
-let sel = null, qs = [], i = 0, ac = 0, fa = 0, locked = false;
+    const $ = id => document.getElementById(id);
+    const KEY = "academia-daw-hist";
+    let sel = null, qs = [], i = 0, ac = 0, fa = 0, locked = false;
 
-function show(id){ ["menu","quiz","hist"].forEach(s => $(s).classList.toggle("hide", s !== id)); }
-function loadHist(){ try{ return JSON.parse(localStorage.getItem(KEY)) || []; }catch(e){ return []; } }
-function saveHist(r){ try{ const h = loadHist(); h.unshift(r); localStorage.setItem(KEY, JSON.stringify(h.slice(0,50))); }catch(e){} }
-function shuffle(a){ a = a.slice(); for(let k=a.length-1;k>0;k--){ const j=Math.floor(Math.random()*(k+1)); [a[k],a[j]]=[a[j],a[k]]; } return a; }
+    function show(id){ ["menu","quiz","hist"].forEach(s => $(s).classList.toggle("hide", s !== id)); }
+    function loadHist(){ try{ return JSON.parse(localStorage.getItem(KEY)) || []; }catch(e){ return []; } }
+    function saveHist(r){ try{ const h = loadHist(); h.unshift(r); localStorage.setItem(KEY, JSON.stringify(h.slice(0,50))); }catch(e){} }
+    function shuffle(a){ a = a.slice(); for(let k=a.length-1;k>0;k--){ const j=Math.floor(Math.random()*(k+1)); [a[k],a[j]]=[a[j],a[k]]; } return a; }
 
-// Menú
-$("asig").innerHTML = '<option value="">-- Selecciona una asignatura --</option>' + Object.keys(DATA).map(a => `<option>${a}</option>`).join("");
-$("asig").onchange = () => {
-  const a = $("asig").value, t = $("tema");
-  if(!a){ t.disabled = true; t.innerHTML = "<option>-- Selecciona primero la asignatura --</option>"; $("start").disabled = true; return; }
-  t.disabled = false;
-  t.innerHTML = '<option value="">-- Selecciona un tema --</option>' + Object.keys(DATA[a]).map(x => `<option>${x}</option>`).join("");
-  $("start").disabled = true;
-};
-$("tema").onchange = () => { $("start").disabled = !$("tema").value; };
+    // Menú
+    $("asig").innerHTML = '<option value="">-- Selecciona una asignatura --</option>' + Object.keys(DATA).map(a => `<option>${a}</option>`).join("");
+    $("asig").onchange = () => {
+        const a = $("asig").value, t = $("tema");
+        if(!a){ t.disabled = true; t.innerHTML = "<option>-- Selecciona primero la asignatura --</option>"; $("start").disabled = true; return; }
+        t.disabled = false;
+        t.innerHTML = '<option value="">-- Selecciona un tema --</option>' + Object.keys(DATA[a]).map(x => `<option>${x}</option>`).join("");
+        $("start").disabled = true;
+    };
+    $("tema").onchange = () => { $("start").disabled = !$("tema").value; };
 
-function begin(){
-  sel = [$("asig").value, $("tema").value];
-  qs = shuffle(DATA[sel[0]][sel[1]]).slice(0, 10); i = 0; ac = 0; fa = 0;
-  show("quiz"); render();
-}
-function score(){
-  const n = ac + fa;
-  $("ac").textContent = ac; $("fa").textContent = fa;
-  $("nota").textContent = n ? (ac / n * 10).toFixed(1) : "0.0";
-}
-function render(){
-  if(i >= qs.length){ finish(); return; }
-  locked = false; score();
-  const q = qs[i];
-  $("prog").textContent = `Pregunta ${i+1} de ${qs.length}`;
-  $("q").textContent = q.q;
-  $("next").classList.add("hide");
-  $("opts").innerHTML = "";
-  q.o.forEach((txt, k) => {
-    const b = document.createElement("button");
-    b.className = "opt"; b.textContent = txt;
-    b.onclick = () => answer(k, b);
-    $("opts").appendChild(b);
-  });
-}
-function answer(k, btn){
-  if(locked) return; locked = true;
-  const c = qs[i].c, btns = $("opts").children;
-  if(k === c){ ac++; btn.classList.add("ok"); } else { fa++; btn.classList.add("ko"); btns[c].classList.add("ok"); }
-  score();
-  $("next").textContent = i === qs.length - 1 ? "Ver resultado" : "Siguiente";
-  $("next").classList.remove("hide");
-}
-$("next").onclick = () => { i++; render(); };
+    function begin(){
+        sel = [$("asig").value, $("tema").value];
+        qs = shuffle(DATA[sel[0]][sel[1]]).slice(0, 10); i = 0; ac = 0; fa = 0;
+        show("quiz"); render();
+    }
+    function score(){
+        const n = ac + fa;
+        $("ac").textContent = ac; $("fa").textContent = fa;
+        $("nota").textContent = n ? (ac / n * 10).toFixed(1) : "0.0";
+    }
+    function render(){
+        if(i >= qs.length){ finish(); return; }
+        locked = false; score();
+        const q = qs[i];
+        $("prog").textContent = `Pregunta ${i+1} de ${qs.length}`;
+        $("q").textContent = q.q;
+        $("next").classList.add("hide");
+        $("opts").innerHTML = "";
+        q.o.forEach((txt, k) => {
+            const b = document.createElement("button");
+            b.className = "opt"; b.textContent = txt;
+            b.onclick = () => answer(k, b);
+            $("opts").appendChild(b);
+        });
+    }
+    function answer(k, btn){
+        if(locked) return; locked = true;
+        const c = qs[i].c, btns = $("opts").children;
+        if(k === c){ ac++; btn.classList.add("ok"); } else { fa++; btn.classList.add("ko"); btns[c].classList.add("ok"); }
+        score();
+        $("next").textContent = i === qs.length - 1 ? "Ver resultado" : "Siguiente";
+        $("next").classList.remove("hide");
+    }
+    $("next").onclick = () => { i++; render(); };
 
-function finish(){
-  const n = ac + fa;
-  if(n){
-    saveHist({d: new Date().toLocaleDateString("es-ES"), t: sel.join(" · "), r: `${ac} ✔ / ${fa} ✘`, n: (ac / n * 10).toFixed(1)});
-  }
-  showHist();
-}
-function showHist(){
-  const h = loadHist();
-  $("rows").innerHTML = h.length
-    ? h.map((r, k) => `<tr><td>${r.d}</td><td>${r.t}</td><td>${r.r}</td><td><b>${r.n}</b></td><td><button class="del" data-i="${k}">🗑️</button></td></tr>`).join("")
-    : '<tr><td colspan="5" class="mut">Aún no hay tests.</td></tr>';
-  show("hist");
-}
+    function finish(){
+        const n = ac + fa;
+        if(n){
+            saveHist({d: new Date().toLocaleDateString("es-ES"), t: sel.join(" · "), r: `${ac} ✔ / ${fa} ✘`, n: (ac / n * 10).toFixed(1)});
+        }
+        showHist();
+    }
+    function showHist(){
+        const h = loadHist();
+        $("rows").innerHTML = h.length
+            ? h.map((r, k) => `<tr><td>${r.d}</td><td>${r.t}</td><td>${r.r}</td><td><b>${r.n}</b></td><td><button class="del" data-i="${k}">🗑️</button></td></tr>`).join("")
+            : '<tr><td colspan="5" class="mut">Aún no hay tests.</td></tr>';
+        show("hist");
+    }
 
-$("start").onclick = begin;
-$("reini").onclick = begin;
-$("salir").onclick = () => show("menu");
-$("term").onclick = finish;
-$("stats").onclick = showHist;
-$("back").onclick = () => show("menu");
-$("rows").onclick = e => {
-  const b = e.target.closest(".del"); if(!b) return;
-  if(!b.dataset.sure){ b.dataset.sure = "1"; b.textContent = "¿Borrar?"; setTimeout(() => { b.dataset.sure = ""; b.textContent = "🗑️"; }, 3000); return; }
-  const h = loadHist(); h.splice(+b.dataset.i, 1);
-  try{ localStorage.setItem(KEY, JSON.stringify(h)); }catch(err){}
-  showHist();
-};
+    $("start").onclick = begin;
+    $("reini").onclick = begin;
+    $("salir").onclick = () => show("menu");
+    $("term").onclick = finish;
+    $("stats").onclick = showHist;
+    $("back").onclick = () => show("menu");
+    $("rows").onclick = e => {
+        const b = e.target.closest(".del"); if(!b) return;
+        if(!b.dataset.sure){ b.dataset.sure = "1"; b.textContent = "¿Borrar?"; setTimeout(() => { b.dataset.sure = ""; b.textContent = "🗑️"; }, 3000); return; }
+        const h = loadHist(); h.splice(+b.dataset.i, 1);
+        try{ localStorage.setItem(KEY, JSON.stringify(h)); }catch(err){}
+        showHist();
+    };
 </script>
 </body>
 </html>
