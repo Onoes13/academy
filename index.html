@@ -86,26 +86,6 @@
     // ✏️ EDITA AQUÍ tus asignaturas, temas y preguntas.
     // Formato: pregunta, opciones y c = índice (empezando en 0) de la correcta.
     const DATA = {
-      "Programación": {
-        "Tema 1 – Java básico": [
-          {q:"¿Qué palabra clave declara una constante en Java?", o:["const","final","static","let"], c:1},
-          {q:"¿Cuál es el tipo de dato para números decimales de doble precisión?", o:["float","int","double","long"], c:2},
-          {q:"¿Cómo se llama el método principal de una aplicación Java?", o:["start","run","main","init"], c:2}
-        ]
-      },
-      "Bases de Datos": {
-        "Tema 1 – SQL": [
-          {q:"¿Qué sentencia se usa para consultar datos?", o:["INSERT","SELECT","UPDATE","DROP"], c:1},
-          {q:"¿Qué cláusula filtra filas?", o:["WHERE","ORDER BY","GROUP BY","JOIN"], c:0},
-          {q:"¿Qué restricción identifica de forma única cada fila?", o:["FOREIGN KEY","UNIQUE NULL","PRIMARY KEY","CHECK"], c:2}
-        ]
-      },
-      "Lenguajes de Marcas": {
-        "Tema 1 – HTML": [
-          {q:"¿Qué etiqueta define un enlace?", o:["<link>","<a>","<href>","<url>"], c:1},
-          {q:"¿Qué etiqueta es la de mayor nivel de encabezado?", o:["<h6>","<head>","<h1>","<header>"], c:2}
-        ]
-      },
       "Desarrollo Web en Entorno Cliente": {
         "Tema 1": [
           {q:"¿Qué lenguaje de marcado se utiliza para estructurar el contenido de una página web?", o:["JSON", "JavaScript", "HTML", "CSS"], c:2},
@@ -464,6 +444,106 @@
           {q:"Qué propiedad de MySQLi informa de filas afectadas por INSERT, UPDATE o DELETE?", o:["num_files", "error_count exclusivamente", "row_name", "affected_rows"], c:3},
           {q:"Qué función PHP elimina un archivo?", o:["rename()", "mkdir()", "copy()", "unlink()"], c:3}
         ]
+      },
+      "Diseño de interfaces": {
+        "Tema 1": [
+          {q:"¿Qué ventaja ofrecen las pestañas cuando se usan correctamente?", o:["Agrupan secciones relacionadas y facilitan cambiar entre ellas", "Ocultan todas las opciones", "Eliminan la navegación", "Obligan a abrir una ventana nueva"], c:0},
+          {q:"¿Qué puede ser realista, estilizada o semiabstracta dentro de un diseño?", o:["La gravedad", "La representación", "La navegación", "La tipografía"], c:1},
+          {q:"¿Qué principio mejora la legibilidad del texto en una interfaz?", o:["Usar una tipografía de tamaño suficiente y fácil de leer", "Usar siempre el tamaño más pequeño posible", "Combinar muchas tipografías distintas", "Escribir todo en mayúsculas"], c:0},
+          {q:"¿Qué elemento visual permite transmitir la sensación de superficie de un objeto?", o:["La posición", "La dirección", "La gravedad", "La textura"], c:3},
+          {q:"¿Qué recurso de maquetación permite separar contenidos en zonas independientes?", o:["Los formatos de audio", "Los procesos", "Las contraseñas", "Las capas"], c:3},
+          {q:"¿Qué significa WYSIWYG en un editor web?", o:["Que solo trabaja con imágenes", "Que la edición visual se aproxima al resultado final mostrado", "Que solo permite editar código fuente", "Que no muestra ninguna vista previa"], c:1},
+          {q:"¿Por qué las tablas pueden causar problemas de accesibilidad cuando se usan para maquetar?", o:["Porque el orden lógico del contenido puede resultar confuso", "Porque siempre bloquean los enlaces", "Porque no admiten ningún texto", "Porque no pueden contener imágenes"], c:0},
+          {q:"¿Qué propiedad del color expresa su pureza o intensidad?", o:["La escala", "La saturación", "La dirección", "El brillo"], c:1},
+          {q:"¿Qué debe ayudar a mantener una guía de estilo?", o:["La eliminación de reglas de diseño", "La duplicación de diseños", "El uso de estilos diferentes en cada página", "La coherencia visual y de comportamiento de la interfaz"], c:3},
+          {q:"¿Qué elemento de relación visual se asocia a la sensación de peso de los objetos?", o:["La textura", "La gravedad", "El tono", "La línea"], c:1},
+          {q:"¿Qué relación debe existir entre forma y función en un buen diseño?", o:["La forma debe ignorar completamente la función", "La función debe ocultarse al usuario", "La forma solo debe ser decorativa", "La forma debe ayudar a comunicar y cumplir la función prevista"], c:3},
+          {q:"¿Qué propiedad del color está relacionada con la cantidad de luz que refleja una superficie?", o:["La saturación", "La textura", "La posición", "El brillo"], c:3},
+          {q:"¿Qué ventaja ofrecen las migas de pan?", o:["Eliminan la necesidad de enlaces", "Ocultan la jerarquía de páginas", "Muestran la posición del usuario dentro de la estructura del sitio", "Sustituyen el contenido principal"], c:2},
+          {q:"¿Qué objetivo general persigue el diseño de interfaces web?", o:["Mostrar el mayor número de elementos posible", "Facilitar una interacción comprensible, coherente y visualmente organizada", "Sustituir la estructura por decoración", "Aumentar la complejidad de uso"], c:1},
+          {q:"¿Qué tipo de marcas describen la función o estructura de un fragmento sin centrarse en su apariencia?", o:["Marcas descriptivas", "Marcas de impresión", "Marcas de color", "Marcas de presentación"], c:0},
+          {q:"¿Cuál es la unidad mínima de expresión gráfica?", o:["El volumen", "La línea", "El plano", "El punto"], c:3},
+          {q:"¿Qué efecto produce una composición visual equilibrada?", o:["Coloca todos los elementos en una esquina", "Elimina toda diferencia de tamaño", "Impide destacar elementos", "Distribuye de forma coherente el peso de los elementos"], c:3},
+          {q:"¿Qué tipo de navegación permite saltar entre contenidos mediante enlaces relacionados?", o:["La navegación hipertextual", "La navegación exclusivamente lineal", "La navegación sin enlaces", "La navegación por impresión"], c:0},
+          {q:"¿Qué característica debe tener una guía de estilo para integrarse bien en el trabajo diario?", o:["Ser independiente del proceso de diseño", "Ser difícil de consultar", "Ser usable", "Ser exclusivamente decorativa"], c:2},
+          {q:"¿Qué función puede cumplir un icono en una interfaz?", o:["Definir la estructura HTML", "Validar una hoja de estilo", "Identificar una aplicación, carpeta o acción", "Sustituir todo el contenido de una página"], c:2},
+          {q:"¿Qué ventaja aporta utilizar iconos estandarizados cuando existe una convención conocida?", o:["Facilitan el reconocimiento de la función por parte del usuario", "Reducen siempre el tamaño del texto", "Eliminan la necesidad de navegación", "Obligan a memorizar significados nuevos"], c:0},
+          {q:"¿Qué combinación favorece una buena jerarquía visual?", o:["Elementos sin orden ni alineación", "Ausencia de separación entre contenidos", "Tamaño, contraste, posición y espaciado coherentes", "Colores idénticos para todo"], c:2},
+          {q:"¿Qué elemento práctico del diseño expresa el objetivo para el que se crea una composición?", o:["La posición", "La textura", "La función", "La forma"], c:2},
+          {q:"¿Qué tipo de menú muestra la ruta seguida por el usuario dentro de un sitio?", o:["Las migas de pan", "El menú circular", "El menú de cortinilla", "El menú de pestañas"], c:0},
+          {q:"¿Qué debe permitir una interfaz bien diseñada ante una acción del usuario?", o:["Entender qué se puede hacer y qué resultado ha producido la acción", "Obligar a adivinar el resultado", "Ocultar cualquier cambio", "Evitar toda retroalimentación"], c:0},
+          {q:"¿Qué debe evitarse al diseñar iconos para acciones habituales?", o:["Usar tamaños visibles", "Crear símbolos ambiguos cuando existe un icono convencional conocido", "Acompañar iconos dudosos con texto", "Mantener coherencia entre pantallas"], c:1},
+          {q:"¿Qué tipo de prototipo puede realizarse rápidamente con bocetos en papel?", o:["Un prototipo de baja fidelidad", "Un prototipo final", "Un prototipo de producción", "Un prototipo de alta fidelidad"], c:0},
+          {q:"¿Qué problema aparece cuando un usuario no sabe qué acciones debe realizar para lograr su objetivo?", o:["Un problema de almacenamiento", "Un problema en el ámbito de la ejecución", "Un problema de licencia", "Un problema de compresión"], c:1},
+          {q:"¿Qué elemento visual se forma al unir o recorrer una sucesión de puntos?", o:["El volumen", "El color", "La línea", "La textura"], c:2},
+          {q:"¿Qué aspecto de una guía de estilo define colores, tipografía y disposición visual?", o:["El aspecto visual", "La base de datos", "La licencia del sitio", "La ruta de navegación"], c:0},
+          {q:"¿Qué elemento ayuda a diferenciar visualmente contenidos relacionados de contenidos distintos?", o:["El protocolo HTTP", "El espacio", "El código fuente", "La licencia"], c:1},
+          {q:"¿Cómo se denominan los colores situados en posiciones opuestas del círculo cromático?", o:["Complementarios", "Primarios", "Análogos", "Terciarios"], c:0},
+          {q:"¿Qué debe buscar la navegación de un sitio web?", o:["Que el usuario sepa dónde está y cómo llegar a otras secciones", "Que todos los enlaces lleven a la portada", "Que solo exista una ruta posible", "Que los menús cambien en cada página"], c:0},
+          {q:"¿Qué zona de una página web suele contener la información principal?", o:["El cuerpo", "El pie", "El dintel", "La barra de estado"], c:0},
+          {q:"¿Cuál es la finalidad principal de una interfaz gráfica web?", o:["Ocultar las acciones disponibles", "Sustituir todo el contenido textual", "Mostrar únicamente imágenes decorativas", "Facilitar una comunicación visual fluida entre usuario y sistema"], c:3}
+        ],
+        "Tema 2": [
+          {q:"¿Qué método de aplicación de CSS suele tener prioridad sobre reglas externas e incrustadas equivalentes?", o:["El comentario HTML", "La hoja externa", "El estilo en línea", "La hoja de impresión"], c:2},
+          {q:"¿Qué propiedad CSS suele controlar la distancia entre líneas de texto?", o:["word-spacing", "line-height", "font-style", "text-transform"], c:1},
+          {q:"¿Qué propiedad auditiva puede controlar el énfasis de la voz?", o:["padding", "stress", "display", "float"], c:1},
+          {q:"¿Qué herramienta del W3C permite comprobar si el CSS cumple las especificaciones?", o:["Un gestor FTP", "El validador CSS del W3C", "El comprobador de enlaces", "Un editor de imágenes"], c:1},
+          {q:"¿Qué propiedad CSS define el espacio entre palabras?", o:["letter-spacing", "text-indent", "word-spacing", "line-height"], c:2},
+          {q:"¿Qué atributo de <link> indica la ruta del archivo CSS?", o:["class", "name", "id", "href"], c:3},
+          {q:"¿Qué propiedad auditiva puede relacionarse con la riqueza o calidad de la voz sintetizada?", o:["richness", "overflow", "border", "opacity"], c:0},
+          {q:"¿Qué significa validar un documento HTML?", o:["Eliminar todos los atributos", "Comprimir el archivo", "Convertirlo en CSS", "Comprobar que su marcado cumple las reglas de la especificación o doctype"], c:3},
+          {q:"¿Qué elemento HTML permite escribir estilos incrustados en el documento?", o:["<style>", "<title>", "<body>", "<link>"], c:0},
+          {q:"¿Qué atributo puede limitar una hoja de estilos a la impresión?", o:["type=\"print\"", "rel=\"print\"", "media=\"print\"", "href=\"print\""], c:2},
+          {q:"¿Qué tecnología se utiliza principalmente para estructurar el contenido de una página web?", o:["MP3", "JPEG", "CSS", "HTML"], c:3},
+          {q:"¿Qué propiedad auditiva puede actuar de forma similar a una familia tipográfica?", o:["font-family", "speech-font", "voice-family", "audio-family"], c:2},
+          {q:"¿Qué ventaja ofrece separar contenido y presentación?", o:["Hace más difícil actualizar el diseño", "Facilita mantenimiento y coherencia visual", "Impide reutilizar reglas", "Obliga a mezclar estilos con texto"], c:1},
+          {q:"¿Qué herramienta permite detectar enlaces rotos en una página?", o:["Un compresor ZIP", "Un editor CSS", "Un comprobador de enlaces", "Un reproductor multimedia"], c:2},
+          {q:"¿Qué son las hojas de estilo auditivas?", o:["Reglas destinadas a controlar aspectos de la presentación hablada del contenido", "Hojas para diseñar bases de datos", "Hojas exclusivas para imágenes", "Reglas de JavaScript"], c:0},
+          {q:"¿Cuál es la extensión habitual de una hoja de estilos CSS?", o:[".css", ".xml", ".js", ".html"], c:0},
+          {q:"¿Qué valor se utiliza habitualmente en rel para enlazar CSS?", o:["script", "stylefile", "stylesheet", "csslink"], c:2},
+          {q:"¿Qué elemento HTML contiene metadatos y enlaces a recursos como CSS?", o:["<head>", "<body>", "<main>", "<footer>"], c:0},
+          {q:"¿Qué forma de aplicar estilos es menos recomendable cuando se busca mantenimiento centralizado?", o:["Definir clases reutilizables", "Usar una hoja externa común", "Separar presentación y contenido", "Repetir estilos en línea en muchas etiquetas"], c:3},
+          {q:"¿Qué ventaja principal ofrece una hoja de estilos externa?", o:["Obliga a repetir los estilos en cada etiqueta", "Solo funciona en una página", "Permite modificar el aspecto de varias páginas desde un único archivo", "Impide reutilizar reglas"], c:2},
+          {q:"¿Qué ventaja de rendimiento puede tener una hoja CSS externa?", o:["Duplica el HTML", "El navegador puede almacenarla en caché y reutilizarla", "Debe descargarse de nuevo para cada elemento", "Impide usar caché"], c:1},
+          {q:"¿Qué ventaja ofrece una clase CSS?", o:["Sustituye la etiqueta HTML", "Permite reutilizar el mismo estilo en varios elementos", "Impide combinar reglas", "Solo puede usarse una vez"], c:1},
+          {q:"¿Qué propiedad CSS define el color del texto?", o:["font-color", "foreground", "color", "text-fill"], c:2},
+          {q:"¿Por qué es útil validar HTML y CSS?", o:["Ayuda a detectar errores de sintaxis y mejorar la compatibilidad", "Garantiza que todos los usuarios prefieran el diseño", "Sustituye las pruebas de usabilidad", "Elimina la necesidad de navegadores"], c:0},
+          {q:"¿Qué elemento HTML contiene normalmente el contenido visible de la página?", o:["<meta>", "<style>", "<head>", "<body>"], c:3},
+          {q:"¿Qué atributo HTML permite asignar una clase CSS a un elemento?", o:["idref", "name", "styleclass", "class"], c:3},
+          {q:"¿Qué ventaja aporta usar nombres de clase claros?", o:["Hace innecesario el HTML", "Facilita comprender y mantener las reglas de estilo", "Impide reutilizar estilos", "Obliga a usar estilos en línea"], c:1}
+        ],
+        "Tema 3": [
+          {q:"¿Qué ventaja principal tiene SVG?", o:["Puede escalarse sin perder calidad", "Depende de una resolución fija", "No puede mostrar gráficos", "Solo admite imágenes pequeñas"], c:0},
+          {q:"¿Qué formato de audio utiliza compresión con pérdida?", o:["FLAC", "MP3", "SVG", "WAV sin comprimir"], c:1},
+          {q:"¿Qué herramienta libre se utiliza para editar gráficos vectoriales?", o:["Inkscape", "JasperReports", "Dreamweaver", "Audacity"], c:0},
+          {q:"¿Qué formato es adecuado para gráficos sencillos con colores planos?", o:["RAW", "WAV", "GIF", "JPEG"], c:2},
+          {q:"¿Qué derechos permiten autorizar o prohibir determinados actos de explotación de una obra?", o:["Los derechos de maquetación", "Los derechos exclusivos", "Los derechos de navegación", "Los derechos de caché"], c:1},
+          {q:"¿Qué formato no admite transparencia de forma habitual?", o:["PNG", "GIF", "JPEG", "SVG"], c:2},
+          {q:"¿Qué efecto controla la visibilidad de un objeto en una animación?", o:["La frecuencia de muestreo", "La transparencia o alpha", "El bitrate", "El tono de audio"], c:1},
+          {q:"¿Qué ventaja ofrece PNG frente al JPEG en gráficos de interfaz?", o:["No admite color", "Puede mantener transparencias y bordes nítidos", "Solo funciona en impresión", "Siempre ocupa menos en fotografías"], c:1},
+          {q:"¿Qué herramienta se utiliza para grabar y editar audio?", o:["GIMP exclusivamente para audio", "Dreamweaver", "Inkscape", "Audacity"], c:3},
+          {q:"¿Qué formato de audio utiliza compresión sin pérdida?", o:["MP3", "FLAC", "JPEG", "GIF"], c:1},
+          {q:"¿Qué herramienta conviene para retocar una fotografía rasterizada?", o:["Audacity", "Adobe Animate exclusivamente", "GIMP", "Inkscape exclusivamente"], c:2},
+          {q:"Una empresa quiere incluir su logotipo en su web. El mismo archivo debe mostrarse tanto en un icono pequeño como en una cabecera de gran tamaño, sin que al ampliarlo aparezcan pixelación ni distorsión. ¿Qué formato es el más adecuado?", o:["JPEG, porque está pensado para imágenes con tonos continuos y permite reducir mucho el tamaño del archivo.", "GIF, porque tiene una excelente tasa de compresión y es aconsejable para logotipos sencillos con colores planos.", "SVG, porque se basa en coordenadas vectoriales y su ampliación o reducción no afecta a la calidad de la imagen.", "PNG, porque fue concebido para la web y permite obtener archivos muy comprimidos a distintos niveles de calidad."], c:2},
+          {q:"¿Qué formato puede ser apropiado para iconos o gráficos con transparencia?", o:["PNG", "JPEG", "FLV", "MP3"], c:0},
+          {q:"¿Qué formato de vídeo ha quedado obsoleto en muchos entornos web modernos?", o:["H.264 dentro de MP4", "FLV", "MP4", "WebM"], c:1},
+          {q:"¿Qué formato suele ser apropiado para una fotografía web comprimida?", o:["JPEG", "FLAC", "GIF animado siempre", "SVG"], c:0}
+        ],
+        "Tema 4": [
+          {q:"Una web de ocio quiere preguntar a sus visitantes su opinión sobre un tema y que todos los usuarios puedan ver el resultado actualizado en tiempo real. ¿Qué elemento interactivo básico se ajusta a este objetivo?", o:["Un foro, ya que permite que la comunidad de usuarios aporte información e ideas sobre un tema y se comunique entre sí.", "Un sistema de comentarios, ya que permite que los usuarios valoren un bien o servicio, como un producto o un restaurante.", "Un formulario, ya que permite que el usuario aporte información para enviarla a un correo electrónico o a una base de datos.", "Una encuesta, ya que es la versión online de este recurso y muestra a todos los usuarios el resultado actualizado en tiempo real."], c:3},
+          {q:"Qué biblioteca basada en JavaScript facilita efectos e interacciones en páginas web?", o:["jQuery", "Audacity", "PostgreSQL", "Inkscape"], c:0},
+          {q:"Un equipo va a usar Bootstrap 5 en un proyecto y quiere saber si también tiene que incluir la librería jQuery. ¿Cuál es la respuesta correcta?", o:["Sí, porque jQuery sigue siendo imprescindible para manipular el DOM en cualquier framework actual.", "No, porque desde Bootstrap 5 el framework no depende de jQuery y usa únicamente JavaScript nativo.", "No, porque desde Bootstrap 5 el framework depende de React para añadir interactividad.", "Sí, porque Bootstrap se creó en Twitter sobre jQuery y sigue necesitándolo para funcionar."], c:1},
+          {q:"Un desarrollador quiere añadir un botón «Atrás» que lleve al usuario a la página anterior del historial de navegación. Busca la forma más sencilla y rápida de hacerlo. ¿Cuál es?", o:["Definir con CSS3 una reacción del botón al paso del cursor que muestre la página anterior del historial de navegación.", "Escribir el evento onclick como atributo en la etiqueta de apertura del botón y darle como valor una función JavaScript de retroceso.", "Usar los elementos details y summary de HTML5 para mostrar la página anterior del historial al pulsar el botón.", "Escribir el evento onclick como atributo en la etiqueta de cierre del botón y darle como valor una función JavaScript de retroceso."], c:1},
+          {q:"En un proyecto web hay que manipular imágenes de mapa de bits con JavaScript y, además, generar y animar elementos vectoriales. ¿Qué tecnología corresponde a cada tarea?", o:["El elemento canvas con JavaScript para ambas tareas, ya que también permite generar y animar elementos vectoriales.", "La etiqueta video de HTML5 para los mapas de bits y la especificación SVG para los elementos vectoriales.", "La especificación SVG con JavaScript para los mapas de bits y el elemento canvas para los elementos vectoriales.", "El elemento canvas con JavaScript para los mapas de bits y la especificación SVG para los elementos vectoriales."], c:3},
+          {q:"Después de aplicar un comportamiento a un botón, un desarrollador quiere que la acción se active al pasar el ratón por encima en lugar de al hacer clic. También quiere añadir una segunda acción. ¿Cómo debe proceder?", o:["Eliminar el comportamiento y crearlo de nuevo, ya que el evento que desencadena la acción no se puede modificar una vez aplicado.", "Sustituir el comportamiento por varios eventos HTML, ya que un comportamiento solo admite una única acción asociada a cada evento.", "Modificar solo los parámetros de la acción existente, ya que a un comportamiento ya aplicado no se le pueden añadir más acciones.", "Cambiar el evento que desencadena la acción y añadir la nueva acción, ya que un comportamiento se compone de evento y acción."], c:3},
+          {q:"En una tienda online, cada botón de compra debe cambiar su color de fondo y aumentar ligeramente de tamaño cuando el usuario sitúa el cursor sobre él. El equipo quiere hacerlo sin escribir JavaScript. ¿Qué solución es la adecuada?", o:["Añadir el atributo onclick a la etiqueta del botón y darle como valor una función JavaScript que cambie su estilo.", "Usar los elementos details y summary de HTML5, que permiten mostrar u ocultar contenido sin programación avanzada.", "Usar propiedades de CSS3, que además del aspecto visual permiten definir reacciones a las acciones del usuario.", "Usar una secuencia de comandos que el navegador ejecute al abrir la página para generar el cambio de aspecto del botón."], c:2},
+          {q:"Qué relación existe entre usabilidad e interactividad?", o:["La interactividad sustituye la navegación", "La interactividad debe ayudar a completar tareas sin aumentar la confusión", "La usabilidad impide usar JavaScript", "Cuanta más animación, mayor usabilidad siempre"], c:1},
+          {q:"Qué afirmación describe correctamente un fichero de vídeo para la web?", o:["Es un contenedor con flujos de datos de imagen, sonido y texto comprimidos, por lo que hace falta un códec para visualizarlo.", "Es un códec que agrupa los flujos de imagen y sonido y los descomprime automáticamente sin necesidad de un contenedor.", "Es un contenedor con flujos de datos de imagen y sonido sin comprimir, por lo que no hace falta ningún códec para visualizarlo.", "Es un contenedor con un único flujo de datos de imagen, mientras que el sonido y los subtítulos se cargan siempre por separado."], c:0},
+          {q:"El navegador web predeterminado del usuario muestra la página web correspondiente a la dirección URL indicada.", o:["El navegador web predeterminado del usuario muestra la página web correspondiente a la dirección URL indicada.", "El navegador web descarga el contenido de la dirección URL y lo integra en el archivo multimedia que se reproduce.", "El reproductor abre el archivo indicado en la dirección URL, igual que cuando encuentra un comando FILENAME.", "El reproductor detiene la reproducción y pide al usuario que instale el complemento asociado a la dirección URL."], c:0},
+          {q:"Qué parte de un comportamiento interactivo inicia la respuesta del sistema?", o:["La hoja de estilos", "La acción resultante", "El pie de página", "El evento"], c:3},
+          {q:"Qué parte de un comportamiento interactivo representa lo que hace el sistema tras el evento?", o:["La cabecera", "La acción", "El atributo alt", "El evento"], c:1},
+          {q:"Un desarrollador quiere que una sección de una página se muestre u oculte cuando el usuario interactúe con ella. Quiere conseguirlo solo con etiquetas HTML, sin programación avanzada. ¿Qué solución debe aplicar?", o:["Usar los elementos details y summary de HTML5, comprobando que los distintos navegadores los admiten.", "Usar el elemento canvas de HTML5 combinado con JavaScript para generar y manipular el contenido.", "Añadir el atributo onclick a la etiqueta de apertura y darle como valor una función JavaScript.", "Incluir una librería basada en JavaScript, como jQuery, para simplificar la manipulación del DOM."], c:0}
+        ]
       }
     };
 
@@ -482,14 +562,17 @@
       const a = $("asig").value, t = $("tema");
       if(!a){ t.disabled = true; t.innerHTML = "<option>-- Selecciona primero la asignatura --</option>"; $("start").disabled = true; return; }
       t.disabled = false;
-      t.innerHTML = '<option value="">-- Selecciona un tema --</option>' + Object.keys(DATA[a]).map(x => `<option>${x}</option>`).join("");
+      t.innerHTML = '<option value="">-- Selecciona un tema --</option>' + Object.keys(DATA[a]).map(x => `<option>${x}</option>`).join("") + '<option value="__general__">🎲 Test general (todos los temas)</option>';
       $("start").disabled = true;
     };
     $("tema").onchange = () => { $("start").disabled = !$("tema").value; };
 
     function begin(){
       sel = [$("asig").value, $("tema").value];
-      qs = shuffle(DATA[sel[0]][sel[1]]).slice(0, 10); i = 0; ac = 0; fa = 0;
+      const T = DATA[sel[0]];
+      const pool = sel[1] === "__general__" ? [...new Map(Object.values(T).flat().map(x => [x.q, x])).values()] : T[sel[1]];
+      if(sel[1] === "__general__") sel[1] = "Test general";
+      qs = shuffle(pool).slice(0, 10); i = 0; ac = 0; fa = 0;
       show("quiz"); render();
     }
     function score(){
