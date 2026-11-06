@@ -34,6 +34,8 @@
         table{width:100%;border-collapse:collapse;font-size:13px}
         th,td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:left}
         .hide{display:none}
+        .card.hard{border:2px solid #e0a100;box-shadow:0 0 0 3px #e0a10033}
+        .badge{display:inline-block;background:#e0a100;color:#1f1b2e;font-weight:700;font-size:12px;border-radius:999px;padding:2px 9px;margin-left:6px}
         .del{width:auto;padding:4px 9px;font-size:13px;color:var(--ko)}
     </style>
 </head>
@@ -446,51 +448,119 @@
             ]
         },
         "Entorno servidor": {
+            "Tema 1": [
+                {q:"Qué protocolo puede comunicar un servidor web con un servidor de aplicaciones Java?", h:1, o:["AJP", "ODBC", "JDBC", "SMTP"], c:0},
+                {q:"Qué función puede cumplir SOAP en una aplicación distribuida?", h:1, o:["Controlar versiones", "Crear hojas de estilo", "Intercambiar mensajes estructurados entre componentes", "Compilar código"], c:2},
+                {q:"Qué tipo de herramienta permite diseñar pantallas arrastrando controles visuales?", o:["Un servidor web", "Un compilador", "Un gestor de paquetes", "Un editor WYSIWYG"], c:3},
+                {q:"¿Qué tipo de contenido suele servir directamente Apache HTTP Server?", h:1, o:["Exclusivamente aplicaciones móviles", "Únicamente tablas SQL", "Recursos web estáticos y respuestas HTTP", "Solo procesos del sistema"], c:2},
+                {q:"Qué tecnología de servidor está históricamente ligada a IIS y Windows?", h:1, o:["Perl", "ASP", "PHP", "JSP"], c:1},
+                {q:"Cuál es una desventaja tradicional de CGI en servidores web?", o:["No permite contenido dinámico", "Puede consumir muchos recursos al crear procesos para las peticiones", "No puede usar HTTP", "Solo funciona con bases de datos"], c:1},
+                {q:"Qué protocolo de mensajería basado en XML puede emplearse entre componentes distribuidos?", o:["ODBC", "FTP", "JDBC", "SOAP"], c:3},
+                {q:"Qué diferencia a un servidor de aplicaciones de un servidor web básico?", o:["Puede ejecutar lógica de aplicación avanzada", "No acepta varias peticiones", "No se conecta con bases de datos", "Solo entrega imágenes"], c:0},
+                {q:"Qué relación existe entre TCP/IP y HTTP?", h:1, o:["HTTP funciona sobre la infraestructura de protocolos TCP/IP", "TCP/IP sustituye al lenguaje HTML", "HTTP es un gestor de bases de datos", "No existe relación"], c:0},
+                {q:"Qué lenguaje puede incrustarse en HTML mediante etiquetas específicas del servidor?", h:1, o:["PHP", "SQL", "CSS", "SVG"], c:0},
+                {q:"Qué indica el primer número de una versión semántica como 2.4.1?", h:1, o:["El número de servidor", "Cambios mayores potencialmente incompatibles", "La versión del navegador", "Correcciones menores únicamente"], c:1},
+                {q:"Qué tecnologías Java se utilizan para programación web de servidor?", o:["Servlets y JSP", "FTP y SMTP", "HTML y CSS", "ODBC y AJP"], c:0},
+                {q:"Qué servidor puede ejecutar Servlets y JSP?", h:1, o:["Apache Tomcat", "Microsoft Access", "WordPress", "FileZilla"], c:0},
+                {q:"Qué conjunto de protocolos es básico para la comunicación en Internet?", o:["ODBC", "TCP/IP", "SOAP exclusivamente", "AJP"], c:1},
+                {q:"Qué función tiene un servidor web en una arquitectura de aplicaciones?", o:["Compilar aplicaciones cliente", "Resolver todas las sesiones del sistema operativo", "Ejecutar únicamente consultas SQL", "Recibir peticiones HTTP y entregar recursos o delegar procesamiento"], c:3},
+                {q:"Qué lenguaje de servidor suele integrarse con un servidor web mediante un módulo o intérprete?", h:1, o:["XML", "CSS", "PHP", "HTML"], c:2},
+                {q:"Qué tecnología está asociada al desarrollo web con .NET clásico?", h:1, o:["Perl", "ASP", "JSP", "PHP"], c:1},
+                {q:"Qué lenguaje de servidor está asociado al JVM?", h:1, o:["Java", "VBScript", "ASP clásico", "PHP"], c:0},
+                {q:"Qué tecnología se utilizó históricamente para generar contenido dinámico mediante programas externos al servidor web?", h:1, o:["FTP", "CGI", "DNS", "CSS"], c:1},
+                {q:"Qué tecnología moderna suele reemplazar a CGI para generar páginas dinámicas?", h:1, o:["CSS", "DNS", "FTP", "Lenguajes y plataformas de servidor como PHP, Java o ASP.NET"], c:3},
+                {q:"Qué herramienta ayuda a revisar el comportamiento de variables durante la ejecución?", h:1, o:["El servidor FTP", "El navegador exclusivamente", "El depurador", "El gestor DNS"], c:2},
+                {q:"Qué tecnología permite acceso estándar a bases de datos en entornos Windows?", h:1, o:["SOAP", "HTTP", "ODBC", "AJP"], c:2}
+            ],
+            "Tema 2": [
+                {q:"¿Qué objeto Servlet se utiliza para construir la respuesta HTTP?", o:["HttpServletRequest", "HttpFile", "HttpServletResponse", "HttpCookie"], c:2},
+                {q:"¿Qué marca se utiliza para abrir código PHP incrustado en HTML?", o:["<script>", "<asp>", "<?php", "<jsp>"], c:2},
+                {q:"¿Qué elemento configura aspectos globales del funcionamiento de PHP?", o:["El registro DNS", "El archivo CSS", "El archivo php.ini", "El documento WSDL"], c:2},
+                {q:"¿Qué componente necesita un Servlet para ejecutarse?", h:1, o:["Un servidor DNS", "Un contenedor o servidor de aplicaciones", "Un editor WYSIWYG", "Un servidor FTP exclusivamente"], c:1},
+                {q:"¿Qué objeto Servlet contiene los datos de la petición HTTP?", o:["HttpServletRequest", "ServletConfig exclusivamente", "HttpSession exclusivamente", "HttpServletResponse"], c:0},
+                {q:"¿Qué tecnología clásica está integrada con IIS?", o:["ASP", "Servlets", "JSP", "PHP obligatoriamente"], c:0},
+                {q:"¿Qué tecnología de páginas Java se compila para ejecutarse en el servidor?", h:1, o:["HTML", "JSP", "VBScript cliente", "CSS"], c:1},
+                {q:"¿Qué función cumple php.ini?", o:["Configurar opciones del intérprete PHP", "Describir servicios SOAP", "Definir páginas HTML", "Guardar sesiones de navegador exclusivamente"], c:0},
+                {q:"¿Qué característica de ASP lo hace adecuado para entornos Microsoft clásicos?", h:1, o:["Su integración con IIS y tecnologías Windows", "Su ejecución obligatoria en Tomcat", "Su uso de la JVM", "Su independencia total de Windows"], c:0},
+                {q:"¿Qué tecnología de Microsoft permitió ejecutar scripts del lado servidor dentro de IIS?", h:1, o:["PHP", "Servlets", "JSP", "ASP"], c:3},
+                {q:"¿Qué característica de PHP puede afectar al rendimiento frente a código compilado?", o:["No puede usar bases de datos", "No admite funciones", "No soporta formularios", "Es un lenguaje interpretado"], c:3},
+                {q:"¿Qué lenguaje de servidor basado en Java resulta portable entre sistemas con JVM?", h:1, o:["JSP", "ActiveX", "VBScript", "ASP clásico"], c:0},
+                {q:"¿Qué ventaja ofrece JSP frente a una tecnología ligada a Windows?", o:["No necesita servidor de aplicaciones", "No admite Java", "Solo funciona con IIS", "Puede ejecutarse en plataformas compatibles con Java"], c:3},
+                {q:"¿Qué métodos atienden normalmente peticiones HTTP en un Servlet?", o:["doRead() y doWrite()", "doGet() y doPost()", "doOpen() y doClose()", "doFile() y doSave()"], c:1},
+                {q:"¿Qué clase base se utiliza habitualmente para un Servlet HTTP?", o:["HttpRequest", "JspServlet exclusivamente", "HttpServlet", "HttpResponse"], c:2},
+                {q:"¿Qué etiqueta HTML indica código JavaScript ejecutado en el navegador?", o:["<script>", "<asp>", "<?php", "<%@"], c:0},
+                {q:"¿Qué información puede obtenerse con HttpServletRequest?", o:["Solo archivos del sistema", "Únicamente la configuración del servidor", "Solo el código HTML final", "Parámetros, cabeceras y datos de la petición"], c:3},
+                {q:"¿Qué directiva JSP controla si una página se considera segura para hilos?", o:["safePage", "isSecure", "isThreadSafe", "threadMode"], c:2},
+                {q:"¿Qué tecnología se caracteriza por una curva de aprendizaje accesible para desarrollo web de servidor?", o:["PHP", "CSS", "ODBC", "AJP"], c:0},
+                {q:"¿Qué puede establecerse mediante HttpServletResponse?", o:["La dirección MAC del cliente", "El código fuente del navegador", "Estado, cabeceras y cuerpo de la respuesta", "La versión del sistema operativo"], c:2},
+                {q:"¿Qué relación existe entre JSP y Servlets?", o:["Son tecnologías sin relación", "Las páginas JSP terminan ejecutándose mediante tecnología Servlet", "Servlets son hojas de estilo", "JSP solo funciona en cliente"], c:1},
+                {q:"¿Qué objeto Servlet permite establecer cabeceras y contenido de respuesta?", o:["Cookie exclusivamente", "URL exclusivamente", "HttpServletRequest", "HttpServletResponse"], c:3},
+                {q:"¿Cuál es una limitación histórica de VBScript?", h:1, o:["No permite cadenas de texto", "No puede ejecutarse en servidor", "Está fuertemente ligado a productos Windows", "No admite ninguna estructura de control"], c:2},
+                {q:"¿Qué distingue a JSP de PHP en su base tecnológica?", h:1, o:["JSP se basa en VBScript", "Ambos son CSS", "JSP se basa en Java", "PHP se basa en Java exclusivamente"], c:2}
+            ],
+            "Tema 3": [
+                {q:"¿Qué caracteriza a HTML y XML frente a lenguajes imperativos?", o:["Describen estructura de información en lugar de una secuencia de acciones", "Solo se usan en bases de datos", "Ejecutan siempre algoritmos", "Son lenguajes de máquina"], c:0},
+                {q:"¿Qué método HTTP es preferible para enviar una contraseña desde un formulario?", o:["HEAD", "OPTIONS", "GET", "POST"], c:3},
+                {q:"¿Qué característica tiene una variable de sesión?", o:["Solo almacena números", "Puede conservar información del usuario entre varias peticiones", "Se envía siempre en la URL", "Solo existe durante una línea de código"], c:1},
+                {q:"¿Qué bucle comprueba la condición después de ejecutar el cuerpo?", o:["while", "do-while", "foreach", "for"], c:1},
+                {q:"¿Qué bucle es apropiado cuando se conoce el número de iteraciones?", o:["do-while exclusivamente", "for", "while exclusivamente", "if"], c:1},
+                {q:"¿Qué relación existe entre formulario y método HTTP?", h:1, o:["El formulario siempre usa GET", "El atributo method determina cómo se envían los datos", "Los métodos HTTP solo se usan en CSS", "El servidor decide siempre ignorando el formulario"], c:1},
+                {q:"¿Qué información puede recibir request.getParameter() en JSP?", o:["El código fuente Java completo", "El valor de un parámetro enviado en la petición", "La estructura de la base de datos", "La contraseña del servidor"], c:1},
+                {q:"¿Qué función permite mostrar texto o valores en PHP?", h:1, o:["class", "echo", "$_GET", "while"], c:1},
+                {q:"¿Qué estructura permite tomar decisiones en PHP?", o:["array", "while exclusivamente", "if", "class"], c:2},
+                {q:"¿Qué método HTTP se utiliza habitualmente para enviar datos de formularios sin mostrarlos en la URL?", o:["TRACE", "POST", "GET", "HEAD"], c:1},
+                {q:"¿Qué estructura PHP repite instrucciones mientras una condición sea verdadera?", h:1, o:["if", "while", "class", "switch"], c:1},
+                {q:"¿Qué método JSP obtiene un parámetro de la petición?", o:["request.getParameter()", "session.write()", "response.getParameter()", "document.get()"], c:0},
+                {q:"¿Qué estructura permite seleccionar entre varios casos?", o:["session", "function", "for", "switch"], c:3},
+                {q:"¿Qué requisito existe para usar datos de sesión PHP?", o:["Usar obligatoriamente GET", "Compilar el script", "Iniciar o disponer de una sesión activa", "Guardar siempre los datos en cookies manuales"], c:2},
+                {q:"¿Qué bucle recorre cómodamente los elementos de un array PHP?", o:["foreach", "switch", "class", "if"], c:0},
+                {q:"¿Qué diferencia visible existe entre GET y POST?", o:["GET no usa HTTP", "POST siempre cifra los datos", "GET suele incluir datos en la URL y POST los envía en el cuerpo de la petición", "No existe diferencia"], c:2}
+            ],
             "Tema 4": [
-                {q:"Qué tipo de mantenimiento de estado utilizan normalmente PHP y JSP?", o:["Mantenimiento sin identificador", "Mantenimiento por DNS", "Mantenimiento bajo demanda mediante mecanismos de sesión", "Mantenimiento automático obligatorio de IIS"], c:2},
-                {q:"Qué tipo de mantenimiento de estado puede realizar IIS automáticamente?", o:["Mantenimiento manual exclusivamente", "Mantenimiento por DNS", "Mantenimiento automático del estado", "Mantenimiento por FTP"], c:2},
-                {q:"Qué IDE de código abierto es multiplataforma?", o:["Eclipse", "IIS", "OpenSSL", "Apache"], c:0},
-                {q:"Qué debe evitarse guardar directamente en una cookie?", o:["Una fecha de expiración", "Información sensible sin protección", "Un identificador aleatorio", "Preferencias no sensibles"], c:1},
-                {q:"Qué tipo de variable es $_SESSION?", o:["Una variable local obligatoria", "Una superglobal", "Una constante", "Una clase"], c:1},
+                {q:"Qué tipo de mantenimiento de estado utilizan normalmente PHP y JSP?", h:1, o:["Mantenimiento sin identificador", "Mantenimiento por DNS", "Mantenimiento bajo demanda mediante mecanismos de sesión", "Mantenimiento automático obligatorio de IIS"], c:2},
+                {q:"Qué tipo de mantenimiento de estado puede realizar IIS automáticamente?", h:1, o:["Mantenimiento manual exclusivamente", "Mantenimiento por DNS", "Mantenimiento automático del estado", "Mantenimiento por FTP"], c:2},
+                {q:"Qué IDE de código abierto es multiplataforma?", h:1, o:["Eclipse", "IIS", "OpenSSL", "Apache"], c:0},
+                {q:"Qué debe evitarse guardar directamente en una cookie?", h:1, o:["Una fecha de expiración", "Información sensible sin protección", "Un identificador aleatorio", "Preferencias no sensibles"], c:1},
+                {q:"Qué tipo de variable es $_SESSION?", h:1, o:["Una variable local obligatoria", "Una superglobal", "Una constante", "Una clase"], c:1},
                 {q:"Qué IDE es conocido por su sistema de plugins?", o:["NetBeans", "BIND", "FileZilla", "Apache HTTP Server"], c:0}
             ],
             "Tema 5": [
-                {q:"Qué tipo de mantenimiento de estado utilizan normalmente PHP y JSP?", o:["Mantenimiento sin identificador", "Mantenimiento por DNS", "Mantenimiento bajo demanda mediante mecanismos de sesión", "Mantenimiento automático obligatorio de IIS"], c:2},
-                {q:"Qué tipo de mantenimiento de estado puede realizar IIS automáticamente?", o:["Mantenimiento manual exclusivamente", "Mantenimiento por DNS", "Mantenimiento automático del estado", "Mantenimiento por FTP"], c:2},
-                {q:"Qué IDE de código abierto es multiplataforma?", o:["Eclipse", "IIS", "OpenSSL", "Apache"], c:0},
-                {q:"Qué debe evitarse guardar directamente en una cookie?", o:["Una fecha de expiración", "Información sensible sin protección", "Un identificador aleatorio", "Preferencias no sensibles"], c:1},
-                {q:"Qué tipo de variable es $_SESSION?", o:["Una variable local obligatoria", "Una superglobal", "Una constante", "Una clase"], c:1},
+                {q:"Qué tipo de mantenimiento de estado utilizan normalmente PHP y JSP?", h:1, o:["Mantenimiento sin identificador", "Mantenimiento por DNS", "Mantenimiento bajo demanda mediante mecanismos de sesión", "Mantenimiento automático obligatorio de IIS"], c:2},
+                {q:"Qué tipo de mantenimiento de estado puede realizar IIS automáticamente?", h:1, o:["Mantenimiento manual exclusivamente", "Mantenimiento por DNS", "Mantenimiento automático del estado", "Mantenimiento por FTP"], c:2},
+                {q:"Qué IDE de código abierto es multiplataforma?", h:1, o:["Eclipse", "IIS", "OpenSSL", "Apache"], c:0},
+                {q:"Qué debe evitarse guardar directamente en una cookie?", h:1, o:["Una fecha de expiración", "Información sensible sin protección", "Un identificador aleatorio", "Preferencias no sensibles"], c:1},
+                {q:"Qué tipo de variable es $_SESSION?", h:1, o:["Una variable local obligatoria", "Una superglobal", "Una constante", "Una clase"], c:1},
                 {q:"Qué IDE es conocido por su sistema de plugins?", o:["NetBeans", "BIND", "FileZilla", "Apache HTTP Server"], c:0},
-                {q:"Qué enfoque moderno organiza interfaces web mediante componentes reutilizables?", o:["ODBC", "Frameworks como React, Vue o Svelte", "SOAP exclusivamente", "FTP"], c:1},
-                {q:"Qué control HTML permite elegir una sola opción de un grupo?", o:["Textarea", "Checkbox", "Hidden", "Radio button"], c:3},
-                {q:"Qué ventaja tiene POST frente a GET para grandes cantidades de datos?", o:["Siempre cifra los datos", "Elimina la validación", "No usa HTTP", "Envía los datos en el cuerpo de la petición"], c:3},
-                {q:"Qué atributo del formulario indica el destino que procesa los datos?", o:["selected", "src", "maxlength", "action"], c:3},
-                {q:"Qué característica de HTTP obliga a utilizar mecanismos adicionales para conservar datos entre peticiones?", o:["Solo permite GET", "Es un protocolo de archivos", "No usa cabeceras", "Es un protocolo sin estado"], c:3},
-                {q:"Qué atributo muestra un checkbox marcado inicialmente?", o:["maxlength", "src", "selectedIndex", "checked"], c:3},
+                {q:"Qué enfoque moderno organiza interfaces web mediante componentes reutilizables?", h:1, o:["ODBC", "Frameworks como React, Vue o Svelte", "SOAP exclusivamente", "FTP"], c:1},
+                {q:"Qué control HTML permite elegir una sola opción de un grupo?", h:1, o:["Textarea", "Checkbox", "Hidden", "Radio button"], c:3},
+                {q:"Qué ventaja tiene POST frente a GET para grandes cantidades de datos?", h:1, o:["Siempre cifra los datos", "Elimina la validación", "No usa HTTP", "Envía los datos en el cuerpo de la petición"], c:3},
+                {q:"Qué atributo del formulario indica el destino que procesa los datos?", h:1, o:["selected", "src", "maxlength", "action"], c:3},
+                {q:"Qué característica de HTTP obliga a utilizar mecanismos adicionales para conservar datos entre peticiones?", h:1, o:["Solo permite GET", "Es un protocolo de archivos", "No usa cabeceras", "Es un protocolo sin estado"], c:3},
+                {q:"Qué atributo muestra un checkbox marcado inicialmente?", h:1, o:["maxlength", "src", "selectedIndex", "checked"], c:3},
                 {q:"Qué función tiene la vista en MVC?", o:["Crear sesiones de servidor", "Gestionar conexiones SQL", "Mostrar la interfaz y los datos al usuario", "Ejecutar directamente toda la lógica de negocio"], c:2},
                 {q:"Qué ocurre con un checkbox no marcado al enviar un formulario HTML?", o:["Se convierte en radio button", "Siempre se envía como true", "Normalmente no se envía su valor", "Bloquea el formulario"], c:2},
                 {q:"Qué mecanismo compensa la naturaleza sin estado de HTTP?", o:["El atributo src", "Sesiones, cookies u otros mecanismos de estado", "Los comentarios HTML", "Las hojas de estilo"], c:1},
                 {q:"Qué atributo limita la longitud máxima de un input de texto?", o:["size", "maxlength", "name", "checked"], c:1},
                 {q:"Qué control HTML permite introducir texto de varias líneas?", o:["textarea", "radio", "checkbox", "hidden"], c:0},
                 {q:"Qué atributo controla el ancho visible aproximado de un input de texto?", o:["name", "checked", "size", "method"], c:2},
-                {q:"Qué función PHP comprueba si una variable está definida y tiene valor no nulo?", o:["include()", "isset()", "echo()", "fopen()"], c:1}
+                {q:"Qué función PHP comprueba si una variable está definida y tiene valor no nulo?", h:1, o:["include()", "isset()", "echo()", "fopen()"], c:1}
             ],
             "Tema 6": [
                 {q:"Qué función devuelve el puntero de lectura de un directorio al inicio?", o:["closedir()", "rewinddir()", "fseek()", "readdir()"], c:1},
                 {q:"Qué función clásica devolvía filas afectadas por una consulta MySQL?", o:["mysql_file()", "mysql_close()", "mysql_select()", "mysql_affected_rows()"], c:3},
-                {q:"¿Qué función PHP mueve el puntero de un archivo a una posición concreta?", o:["fgets()", "fseek()", "fwrite()", "feof()"], c:1},
-                {q:"Qué alternativa PHP permite trabajar con distintos gestores mediante una interfaz común?", o:["AJP", "JSP", "PDO", "DHTML"], c:2},
+                {q:"¿Qué función PHP mueve el puntero de un archivo a una posición concreta?", h:1, o:["fgets()", "fseek()", "fwrite()", "feof()"], c:1},
+                {q:"Qué alternativa PHP permite trabajar con distintos gestores mediante una interfaz común?", h:1, o:["AJP", "JSP", "PDO", "DHTML"], c:2},
                 {q:"Qué función PHP obtiene contenido línea a línea de un archivo?", o:["fgets()", "unlink()", "opendir()", "mkdir()"], c:0},
                 {q:"Qué tecnología ofrece una interfaz estándar para acceder a distintos gestores de bases de datos?", o:["HTTP", "ODBC", "FTP", "CSS"], c:1},
-                {q:"Qué función se utiliza para borrar un fichero del sistema?", o:["fwrite()", "unlink()", "rmdir()", "copy()"], c:1},
-                {q:"Qué función PHP lee una entrada de un directorio abierto?", o:["mkdir()", "readdir()", "opendir()", "closedir()"], c:1},
+                {q:"Qué función se utiliza para borrar un fichero del sistema?", h:1, o:["fwrite()", "unlink()", "rmdir()", "copy()"], c:1},
+                {q:"Qué función PHP lee una entrada de un directorio abierto?", h:1, o:["mkdir()", "readdir()", "opendir()", "closedir()"], c:1},
                 {q:"Qué función puede comprobar el final de un fichero durante una lectura secuencial?", o:["copy()", "closedir()", "mkdir()", "feof()"], c:3},
-                {q:"Qué sentencia inicia una transacción en SQL?", o:["BEGIN TRAN", "CREATE TABLE", "SELECT", "DROP DATABASE"], c:0},
-                {q:"Qué alternativa moderna se recomienda frente a las antiguas funciones mysql_*?", o:["CSS o HTML", "FTP o HTTP", "MySQLi o PDO", "SOAP o XML"], c:2},
-                {q:"Qué función PHP comprueba si se ha alcanzado el final de un archivo?", o:["fseek()", "feof()", "fopen()", "copy()"], c:1},
-                {q:"Qué función se utiliza para borrar un directorio vacío?", o:["rename()", "fseek()", "rmdir()", "unlink()"], c:2},
-                {q:"Qué propiedad de MySQLi informa de filas afectadas por INSERT, UPDATE o DELETE?", o:["num_files", "error_count exclusivamente", "row_name", "affected_rows"], c:3},
-                {q:"Qué función PHP elimina un archivo?", o:["rename()", "mkdir()", "copy()", "unlink()"], c:3}
+                {q:"Qué sentencia inicia una transacción en SQL?", h:1, o:["BEGIN TRAN", "CREATE TABLE", "SELECT", "DROP DATABASE"], c:0},
+                {q:"Qué alternativa moderna se recomienda frente a las antiguas funciones mysql_*?", h:1, o:["CSS o HTML", "FTP o HTTP", "MySQLi o PDO", "SOAP o XML"], c:2},
+                {q:"Qué función PHP comprueba si se ha alcanzado el final de un archivo?", h:1, o:["fseek()", "feof()", "fopen()", "copy()"], c:1},
+                {q:"Qué función se utiliza para borrar un directorio vacío?", h:1, o:["rename()", "fseek()", "rmdir()", "unlink()"], c:2},
+                {q:"Qué propiedad de MySQLi informa de filas afectadas por INSERT, UPDATE o DELETE?", h:1, o:["num_files", "error_count exclusivamente", "row_name", "affected_rows"], c:3},
+                {q:"Qué función PHP elimina un archivo?", h:1, o:["rename()", "mkdir()", "copy()", "unlink()"], c:3}
             ]
         },
         "Diseño de interfaces": {
@@ -632,7 +702,8 @@
         if(i >= qs.length){ finish(); return; }
         locked = false; score();
         const q = qs[i];
-        $("prog").textContent = `Pregunta ${i+1} de ${qs.length}`;
+        $("prog").innerHTML = `Pregunta ${i+1} de ${qs.length}` + (q.h ? '<span class="badge">⭐ Difícil</span>' : "");
+        $("prog").parentElement.classList.toggle("hard", !!q.h);
         $("q").textContent = q.q;
         $("next").classList.add("hide");
         $("opts").innerHTML = "";
