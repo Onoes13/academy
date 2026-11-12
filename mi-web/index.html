@@ -74,13 +74,13 @@
 
     <section id="hist" class="hide card">
         <h2>Tu Historial de Progreso</h2>
+        <button class="s" id="back" style="margin:0 0 14px">🏠 Volver al Menú</button>
         <div class="wrap">
             <table>
                 <thead><tr><th>Fecha</th><th>Test</th><th>Resumen</th><th>Nota</th><th></th></tr></thead>
                 <tbody id="rows"></tbody>
             </table>
         </div>
-        <button class="s" id="back">🏠 Volver al Menú</button>
     </section>
 </main>
 
@@ -299,6 +299,21 @@
                 {q:"Qué mecanismo de autenticación HTTP transmite credenciales codificadas pero no cifradas por sí mismas?", o:["Certificado cliente", "Digest", "Basic", "TLS mutuo"], c:2},
                 {q:"Qué mecanismo HTTP mejora la protección de la contraseña frente a Basic mediante un desafío-respuesta?", o:["Basic", "Digest", "Anonymous", "FTP"], c:1},
                 {q:"Qué significa SOA?", o:["Sistema operativo de aplicaciones", "Arquitectura orientada a servicios", "Servidor de objetos autónomo", "Servicio orientado a archivo"], c:1}
+            ],
+            "Tema 4": [
+                {q:"¿Qué comando FTP copia un archivo del cliente al servidor?", o:["get", "put", "delete", "mget"], c:1},
+                {q:"En una conexión SFTP con autenticación por clave pública, el cliente ya ha validado la huella del servidor y ha enviado su nombre de usuario. ¿Qué secuencia sigue a continuación hasta que se inicia la sesión?", o:["El servidor presenta la clave pública del cliente, el cliente cifra un reto con ella y el servidor responde firmando el reto con su clave privada.", "El servidor solicita la contraseña, el cliente la envía cifrada por el canal seguro y el servidor comprueba después la clave pública registrada.", "El cliente presenta su clave privada registrada en el servidor, el servidor cifra un reto con ella y el cliente responde firmando el reto con su clave pública.", "El cliente presenta su clave pública registrada en el servidor, el servidor cifra un reto con ella y el cliente responde firmando el reto con su clave privada."], c:3},
+                {q:"¿Qué comando FTP permite almacenar o subir un archivo al servidor?", o:["STOR", "LIST", "USER", "RETR"], c:0},
+                {q:"¿Qué puerto utiliza FTP habitualmente para la conexión de control?", o:["20", "22", "21", "80"], c:2},
+                {q:"¿Quién inicia normalmente la conexión de datos en FTP activo?", o:["El proxy HTTP", "El servidor", "El cliente exclusivamente", "El servidor DNS"], c:1},
+                {q:"Un desarrollador se conecta desde la red de su empresa, protegida por un cortafuegos y con salida a Internet a través de un router con una única IP pública, a un servidor FTP externo. La sesión de control se establece sin problema, pero las transferencias de archivos fallan. ¿Qué actuación es la más adecuada para resolverlo?", o:["Cambiar el tipo de transferencia a binario, para que los archivos se codifiquen de forma independiente del sistema operativo del cliente.", "Configurar el acceso anónimo, para que el servidor no tenga que autenticar al cliente antes de abrir la sesión de datos.", "Configurar el cliente en modo activo, para que sea el servidor quien inicie la sesión de datos hacia el puerto que le indica el cliente.", "Configurar el cliente en modo pasivo, para que sea el propio cliente quien inicie la sesión de datos hacia el puerto que le indica el servidor."], c:3},
+                {q:"¿Qué puerto se asocia tradicionalmente al canal de datos FTP en modo activo?", o:["21", "443", "20", "22"], c:2},
+                {q:"¿Qué método de autenticación SFTP puede evitar el uso de contraseña en cada conexión?", o:["Clave pública", "Cookie", "Acceso anónimo", "MIME"], c:0},
+                {q:"¿Qué protocolo permite crear un canal cifrado para sesiones remotas?", o:["SSH", "DNS", "FTP clásico", "HTTP"], c:0},
+                {q:"¿Quién inicia normalmente las conexiones hacia el servidor en FTP pasivo?", o:["El sistema operativo sin cliente", "El cliente", "El servidor DNS", "El servidor hacia un puerto del cliente"], c:1},
+                {q:"¿Qué modo FTP suele atravesar mejor cortafuegos y NAT del lado cliente?", o:["Modo activo", "Modo anónimo", "Modo ASCII", "Modo pasivo"], c:3},
+                {q:"¿Qué componente permite que una identidad autenticada se utilice por las aplicaciones del servidor?", o:["Realm o mecanismo común de autenticación", "Connector", "Valve de compresión", "Host exclusivamente"], c:0},
+                {q:"¿Qué protocolo de mensajería utiliza mensajes XML estructurados en servicios web?", o:["FTP", "SOAP", "SSH", "DNS"], c:1}
             ]
         },
         "FOL": {
@@ -543,7 +558,15 @@
                 {q:"Qué atributo limita la longitud máxima de un input de texto?", o:["size", "maxlength", "name", "checked"], c:1},
                 {q:"Qué control HTML permite introducir texto de varias líneas?", o:["textarea", "radio", "checkbox", "hidden"], c:0},
                 {q:"Qué atributo controla el ancho visible aproximado de un input de texto?", o:["name", "checked", "size", "method"], c:2},
-                {q:"Qué función PHP comprueba si una variable está definida y tiene valor no nulo?", h:1, o:["include()", "isset()", "echo()", "fopen()"], c:1}
+                {q:"Qué función PHP comprueba si una variable está definida y tiene valor no nulo?", h:1, o:["include()", "isset()", "echo()", "fopen()"], c:1},
+                {q:"Qué control se utiliza para seleccionar varias opciones independientes?", o:["Checkbox", "Submit exclusivamente", "Hidden", "Radio button"], c:0},
+                {q:"Qué función se usa tras opendir() para liberar el recurso del directorio?", o:["rename()", "unlink()", "fclose()", "closedir()"], c:3},
+                {q:"Dónde aparecen los parámetros de un formulario enviado por GET?", o:["Solo en la base de datos", "En el archivo CSS", "En una cookie obligatoriamente", "En la URL"], c:3},
+                {q:"Qué función PHP clásica cerraba una conexión MySQL de la extensión antigua?", o:["mysql_close()", "mysql_begin()", "mysql_fetch()", "mysql_open()"], c:0},
+                {q:"Qué función PHP abre un archivo?", o:["fclose()", "feof()", "rewinddir()", "fopen()"], c:3},
+                {q:"Qué método PHP recibe datos enviados por GET?", o:["$_GET", "$_COOKIE", "$_SESSION", "$_POST"], c:0},
+                {q:"Qué atributo de input type=\"image\" indica la imagen utilizada?", o:["value exclusivamente", "alt exclusivamente", "src", "href"], c:2},
+                {q:"Qué tecnología moderna permite enviar datos al servidor de forma asíncrona desde el navegador?", o:["Fetch API o Axios", "FTP", "DNS", "Javadoc"], c:0}
             ],
             "Tema 6": [
                 {q:"Qué función devuelve el puntero de lectura de un directorio al inicio?", o:["closedir()", "rewinddir()", "fseek()", "readdir()"], c:1},
