@@ -49,6 +49,11 @@
         <select id="asig"></select>
         <label for="tema">Tema:</label>
         <select id="tema" disabled><option>-- Selecciona primero la asignatura --</option></select>
+        <label for="modo">Modo de test:</label>
+        <select id="modo">
+            <option value="10">🎲 Aleatorio (10 preguntas)</option>
+            <option value="all">📚 Completo (todas las preguntas)</option>
+        </select>
         <button class="p" id="start" disabled>Comenzar Test</button>
         <button class="s" id="stats">📊 Ver mis Estadísticas</button>
     </section>
@@ -531,15 +536,7 @@
                 {q:"¿Qué bucle recorre cómodamente los elementos de un array PHP?", o:["foreach", "switch", "class", "if"], c:0},
                 {q:"¿Qué diferencia visible existe entre GET y POST?", o:["GET no usa HTTP", "POST siempre cifra los datos", "GET suele incluir datos en la URL y POST los envía en el cuerpo de la petición", "No existe diferencia"], c:2}
             ],
-            "Tema 4": [
-                {q:"Qué tipo de mantenimiento de estado utilizan normalmente PHP y JSP?", h:1, o:["Mantenimiento sin identificador", "Mantenimiento por DNS", "Mantenimiento bajo demanda mediante mecanismos de sesión", "Mantenimiento automático obligatorio de IIS"], c:2},
-                {q:"Qué tipo de mantenimiento de estado puede realizar IIS automáticamente?", h:1, o:["Mantenimiento manual exclusivamente", "Mantenimiento por DNS", "Mantenimiento automático del estado", "Mantenimiento por FTP"], c:2},
-                {q:"Qué IDE de código abierto es multiplataforma?", h:1, o:["Eclipse", "IIS", "OpenSSL", "Apache"], c:0},
-                {q:"Qué debe evitarse guardar directamente en una cookie?", h:1, o:["Una fecha de expiración", "Información sensible sin protección", "Un identificador aleatorio", "Preferencias no sensibles"], c:1},
-                {q:"Qué tipo de variable es $_SESSION?", h:1, o:["Una variable local obligatoria", "Una superglobal", "Una constante", "Una clase"], c:1},
-                {q:"Qué IDE es conocido por su sistema de plugins?", o:["NetBeans", "BIND", "FileZilla", "Apache HTTP Server"], c:0}
-            ],
-            "Tema 5": [
+            "Tema 4 y 5": [
                 {q:"Qué tipo de mantenimiento de estado utilizan normalmente PHP y JSP?", h:1, o:["Mantenimiento sin identificador", "Mantenimiento por DNS", "Mantenimiento bajo demanda mediante mecanismos de sesión", "Mantenimiento automático obligatorio de IIS"], c:2},
                 {q:"Qué tipo de mantenimiento de estado puede realizar IIS automáticamente?", h:1, o:["Mantenimiento manual exclusivamente", "Mantenimiento por DNS", "Mantenimiento automático del estado", "Mantenimiento por FTP"], c:2},
                 {q:"Qué IDE de código abierto es multiplataforma?", h:1, o:["Eclipse", "IIS", "OpenSSL", "Apache"], c:0},
@@ -584,6 +581,24 @@
                 {q:"Qué función se utiliza para borrar un directorio vacío?", h:1, o:["rename()", "fseek()", "rmdir()", "unlink()"], c:2},
                 {q:"Qué propiedad de MySQLi informa de filas afectadas por INSERT, UPDATE o DELETE?", h:1, o:["num_files", "error_count exclusivamente", "row_name", "affected_rows"], c:3},
                 {q:"Qué función PHP elimina un archivo?", h:1, o:["rename()", "mkdir()", "copy()", "unlink()"], c:3}
+            ],
+            "Tema 7": [
+                {q:"Qué documento indica al cliente cómo interactuar con un servicio SOAP?", o:["El archivo hosts", "El WSDL", "El CSS", "El registro MX"], c:1},
+                {q:"Qué representa un Port de WSDL?", o:["Un tipo de dato", "Un registro UDDI", "Un punto final con un binding y una dirección de red", "Una operación abstracta"], c:2},
+                {q:"Qué representa un mensaje SOAP?", o:["Una hoja CSS", "Un archivo de imagen", "Una estructura XML usada para intercambiar información", "Una consulta SQL"], c:2},
+                {q:"En qué entornos sigue siendo común encontrar WSDL y SOAP?", o:["Aplicaciones sin red", "Sitios estáticos sin servidor", "Sistemas empresariales y legados", "Hojas de estilo"], c:2},
+                {q:"Qué describe un Binding de WSDL?", o:["Cómo se transportan y formatean las operaciones", "Cómo se versiona el código", "Dónde se almacenan usuarios", "Cómo se diseña la interfaz gráfica"], c:0},
+                {q:"Qué empresa de análisis popularizó tempranamente el concepto de SOA?", o:["Apache", "Mozilla", "Gartner", "Oracle exclusivamente"], c:2},
+                {q:"Qué elemento WSDL especifica protocolo y formato para un tipo de puerto?", o:["Binding", "Types", "Message", "Service"], c:0},
+                {q:"Qué clase PHP crea un cliente SOAP?", o:["SoapClient", "XmlClient", "SoapServerFile", "HttpSoap"], c:0},
+                {q:"Qué elemento WSDL representa un punto final concreto asociado a una dirección?", o:["Types", "Operation", "Message", "Port"], c:3},
+                {q:"Qué protocolo evolucionó a partir de XML-RPC para mensajería más estructurada?", o:["ODBC", "AJP", "FTP", "SOAP"], c:3},
+                {q:"Qué sistema de tipos utiliza WSDL habitualmente para definir datos?", o:["XSD", "CSS", "JSON Schema exclusivamente", "SQL"], c:0},
+                {q:"Qué elemento WSDL describe los datos intercambiados de forma abstracta?", o:["Message", "Service", "Port", "Binding exclusivamente"], c:0},
+                {q:"Qué protocolo empaqueta mensajes estructurados en servicios web clásicos?", o:["SSH", "SOAP", "DNS", "FTP"], c:1},
+                {q:"Qué función tiene UDDI en servicios web?", o:["Crear sesiones", "Cifrar mensajes SOAP", "Facilitar publicación y descubrimiento de servicios", "Ejecutar consultas SQL"], c:2},
+                {q:"Qué lenguaje se utiliza para escribir documentos WSDL?", o:["JSON", "XML", "SQL", "CSS"], c:1},
+                {q:"Qué elemento WSDL agrupa puntos finales relacionados?", o:["Binding", "Types", "Message", "Service"], c:3}
             ]
         },
         "Diseño de interfaces": {
@@ -713,7 +728,10 @@
         const T = DATA[sel[0]];
         const pool = sel[1] === "__general__" ? [...new Map(Object.values(T).flat().map(x => [x.q, x])).values()] : T[sel[1]];
         if(sel[1] === "__general__") sel[1] = "Test general";
-        qs = shuffle(pool).slice(0, 10); i = 0; ac = 0; fa = 0;
+        const full = $("modo").value === "all";
+        qs = full ? shuffle(pool) : shuffle(pool).slice(0, 10);
+        if(full) sel = [sel[0], sel[1] + " · Completo"];
+        i = 0; ac = 0; fa = 0;
         show("quiz"); render();
     }
     function score(){
